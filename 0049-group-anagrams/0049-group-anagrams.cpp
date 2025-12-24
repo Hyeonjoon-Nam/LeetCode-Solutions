@@ -40,17 +40,18 @@ public:
 
         for (string str : strs)
         {
-            int* temp = new int[26];
-
+            vector<int> freq(26, 0);
             for (char c : str)
             {
-                temp[c-'a']++;
+                freq[c-'a']++;
             }
+
             string key = "";
-            for (int i = 0; i < 26; i++)
+            for (int i = 0; i < 26; ++i)
             {
-                key += to_string(temp[i]);
+                key += freq[i];
             }
+
             count[key].push_back(str);
         }
         
