@@ -28,16 +28,16 @@ public:
         // - Pros: Best time complexity
         // - Cons: Space overhead
         // ================================
-        unordered_set<int> seen;
+        // unordered_set<int> seen;
 
-        for (int x : nums)
-        {
-            if (seen.find(x) != seen.end())
-                return true;
+        // for (int x : nums)
+        // {
+        //     if (seen.find(x) != seen.end())
+        //         return true;
             
-            seen.insert(x);
-        }
-        return false;
+        //     seen.insert(x);
+        // }
+        // return false;
         
         // ================================
         // Approach 3: Sorting
@@ -48,11 +48,11 @@ public:
         // - Pros: Space efficient
         // - Cons: Changes the original order of the number
         // ================================
-        // sort(nums.begin(), nums.end());
-        // for (int i = 0; i < nums.size() - 1; ++i)
-        // {
-        //     if (nums[i] == nums[i+1]) return true;
-        // }
-        // return false;
+        sort(nums.begin(), nums.end());
+        for (int i = 0; i < nums.size() - 1; ++i)
+        {
+            if (nums[i] == nums[i+1]) return true;
+        }
+        return false;
     }
 };
