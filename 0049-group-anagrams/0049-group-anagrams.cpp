@@ -56,7 +56,7 @@ public:
         }
         
         vector<vector<string>> ans;
-        for (auto it : count)
+        for (auto& it : count)
         {
             ans.push_back(it.second);
         }
