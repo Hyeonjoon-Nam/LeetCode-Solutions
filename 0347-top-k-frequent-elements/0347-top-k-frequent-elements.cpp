@@ -2,16 +2,16 @@ class Solution {
 public:
     vector<int> topKFrequent(vector<int>& nums, int k) {
         // ================================
-        // Approach 1: Sorting + map
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
+        // Approach 1: sort + unordered_map
+        // - Time  Complexity: O(N log N)
+        //   (O(N) for unordered_map (insert takes O(1), we do it N times), O(K log K) for sorting)
+        // - Space Complexity: O(N)
+        //   (To store numbers in map)
         // - Pros: 
         // - Cons: 
         // ================================
         
-        map<int, int> count;
+        unordered_map<int, int> count;
         for (int x : nums)
         {
             count[x]++;
