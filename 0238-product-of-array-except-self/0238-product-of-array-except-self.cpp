@@ -25,13 +25,13 @@ public:
 
         
         // ================================
-        // Approach 2: Yeah
+        // Approach 2: Left & Right multiply results
         // - Time  Complexity: O(N)
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        //   (Traverse numbers N times)
+        // - Space Complexity: O(N)
+        //   (To store numbers in vector)
+        // - Pros: Better than O(N²)
+        // - Cons: Little bit harder to implement
         // ================================
         vector<int> leftToRight;
         leftToRight.reserve(nums.size());
