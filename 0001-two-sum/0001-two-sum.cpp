@@ -30,29 +30,29 @@ public:
         // - Pros: Better than O(N²)
         // - Cons: Uses extra space
         // ================================
-        vector<pair<int, int>> pairs;
-        pairs.reserve(nums.size());
+        // vector<pair<int, int>> pairs;
+        // pairs.reserve(nums.size());
 
-        for (int i = 0; i < nums.size(); ++i)
-        {
-            pairs.push_back({ nums[i], i });
-        }
-        sort(pairs.begin(), pairs.end());
+        // for (int i = 0; i < nums.size(); ++i)
+        // {
+        //     pairs.push_back({ nums[i], i });
+        // }
+        // sort(pairs.begin(), pairs.end());
 
-        int p0 = 0;
-        int p1 = nums.size() - 1;
+        // int p0 = 0;
+        // int p1 = nums.size() - 1;
 
-        while (p0 < p1)
-        {
-            int sum = pairs[p0].first + pairs[p1].first;
-            if (sum == target)
-            {
-                return {pairs[p0].second, pairs[p1].second};
-            }
-            else if (sum > target) p1--;
-            else p0++;
-        }
-        return {};
+        // while (p0 < p1)
+        // {
+        //     int sum = pairs[p0].first + pairs[p1].first;
+        //     if (sum == target)
+        //     {
+        //         return {pairs[p0].second, pairs[p1].second};
+        //     }
+        //     else if (sum > target) p1--;
+        //     else p0++;
+        // }
+        // return {};
 
         
         // ================================
@@ -64,17 +64,17 @@ public:
         // - Pros: Even better than O(N log N)
         // - Cons: Uses extra space O(N)
         // ================================
-        // unordered_map<int, int> hash;
+        unordered_map<int, int> hash;
 
-        // for (int i = 0; i < nums.size(); ++i)
-        // {
-        //     int complement = target - nums[i];
-        //     if (hash.find(complement) != hash.end())
-        //     {
-        //         return { hash[complement], i };
-        //     }
-        //     hash[nums[i]] = i;
-        // }
-        // return {};
+        for (int i = 0; i < nums.size(); ++i)
+        {
+            int complement = target - nums[i];
+            if (hash.find(complement) != hash.end())
+            {
+                return { hash[complement], i };
+            }
+            hash[nums[i]] = i;
+        }
+        return {};
     }
 };
