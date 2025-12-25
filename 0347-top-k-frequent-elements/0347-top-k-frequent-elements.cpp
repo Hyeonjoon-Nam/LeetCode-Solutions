@@ -10,27 +10,65 @@ public:
         // - Pros: 
         // - Cons: 
         // ================================
+        // unordered_map<int, int> count;
+        // for (int x : nums)
+        // {
+        //     count[x]++;
+        // }
+
+        // std::vector<std::pair<int, int>> freq;
+        // for (auto& it : count)
+        // {
+        //     freq.push_back(it);
+        // }
+
+        // sort(freq.begin(), freq.end(), [](auto& a, auto& b) {
+        //     return a.second > b.second;
+        // });
+
+        // vector<int> ans;
+        // for (int i = 0; i < k; ++i)
+        // {
+        //     ans.push_back(freq[i].first);
+        // }
+
+        // return ans;
         
+        // ================================
+        // Approach 2: bucket sort
+        // - Time  Complexity: O()
+        //   ()
+        // - Space Complexity: O()
+        //   ()
+        // - Pros: 
+        // - Cons: 
+        // ================================
         unordered_map<int, int> count;
         for (int x : nums)
         {
             count[x]++;
         }
 
-        std::vector<std::pair<int, int>> freq;
+        int n = nums.size();
+        vector<vector<int>> buckets(n + 1);
+
         for (auto& it : count)
         {
-            freq.push_back(it);
+            int num = it.first;
+            int freq = it.second;
+            buckets[freq].push_back(num);
         }
 
-        sort(freq.begin(), freq.end(), [](auto& a, auto& b) {
-            return a.second > b.second;
-        });
-
         vector<int> ans;
-        for (int i = 0; i < k; ++i)
+        for (int i = n; i >= 0; --i)
         {
-            ans.push_back(freq[i].first);
+            if (buckets[i].empty()) continue;
+
+            for (int num : buckets[i])
+            {
+                ans.push_back(num);
+                if (ans.size() == k) return ans;
+            }
         }
 
         return ans;
