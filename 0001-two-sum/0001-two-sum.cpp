@@ -55,12 +55,12 @@ public:
         
         // ================================
         // Approach 3: Hash Map
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // - Time  Complexity: O(N)
+        //   (Insert, find takes O(1) with unordered_map, we do it N times)
+        // - Space Complexity: O(N)
+        //   (To store numbers to unordered_map)
+        // - Pros: Even better than O(N log N)
+        // - Cons: Uses extra space O(N)
         // ================================
         unordered_map<int, int> hash;
 
