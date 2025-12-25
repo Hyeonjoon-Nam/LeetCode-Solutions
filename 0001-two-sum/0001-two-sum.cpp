@@ -21,5 +21,30 @@ public:
             }
         }
         return {};
+
+        
+        // ================================
+        // Approach 2: std::vector::find
+        // - Time  Complexity: O()
+        //   ()
+        // - Space Complexity: O()
+        //   ()
+        // - Pros: 
+        // - Cons: 
+        // ================================
+
+        for (int i = 0; i < nums.size() - 1; ++i)
+        {
+            int cur = nums[i];
+
+            auto it = find(nums.begin(), nums.end(), target - cur);
+            if (it != nums.end())
+            {
+                int dist = it - nums.begin();
+                if (dist == 0) continue;
+
+                return {i, dist};
+            }
+        }
     }
 };
