@@ -4,7 +4,7 @@ public:
         // ================================
         // Approach 1: sort + unordered_map
         // - Time  Complexity: O(N log N)
-        //   (O(N) for unordered_map (insert takes O(1), we do it N times), O(K log K) for sorting)
+        //   (O(N) for unordered_map (insert takes O(1), we do it N times), O(N log N) for sorting)
         // - Space Complexity: O(N)
         //   (To store numbers in map)
         // - Pros: 
