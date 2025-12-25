@@ -4,7 +4,7 @@ public:
     // Encodes a list of strings to a single string.
     string encode(vector<string>& strs) {
         // ================================
-        // Approach 1: 
+        // Approach 1: Length-Prefixing
         // - Time  Complexity: O(N)
         //   (Both encode/decode visit each characters once)
         // - Space Complexity: O(1)
@@ -32,6 +32,7 @@ public:
 
         while (i < sv.size()) {
             size_t j = sv.find('#', i);
+            if (j == string_view::npos) break;
             
             int len = 0;
             for (size_t k = i; k < j; ++k) {
@@ -41,7 +42,6 @@ public:
             i = j + 1;
 
             ret.emplace_back(sv.substr(i, len));
-
             i += len;
         }
         return ret;
