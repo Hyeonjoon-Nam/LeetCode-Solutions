@@ -65,7 +65,8 @@ public:
         // - Cons: Uses extra space O(N)
         // ================================
         unordered_map<int, int> hash;
-
+        hash.reserve(nums.size());
+        
         for (int i = 0; i < nums.size(); ++i)
         {
             int complement = target - nums[i];
