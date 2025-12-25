@@ -31,7 +31,7 @@ public:
         // - Cons: Uses extra space
         // ================================
         vector<pair<int, int>> pairs;
-        //pairs.reserve(nums.size());
+        pairs.reserve(nums.size());
 
         for (int i = 0; i < nums.size(); ++i)
         {
