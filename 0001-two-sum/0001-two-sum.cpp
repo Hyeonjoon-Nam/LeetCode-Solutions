@@ -7,16 +7,14 @@ public:
         //   (N * N times)
         // - Space Complexity: O(1)
         //   (No extra space used)
-        // - Pros: 
-        // - Cons: 
+        // - Pros: Space efficient
+        // - Cons: Doesn't meet the requirement (better than O(N²))
         // ================================
         // int size = nums.size();
         // for (int i = 0; i < nums.size() - 1; ++i)
         // {
         //     for (int j = i + 1; j < nums.size(); ++j)
         //     {
-        //         if (i == j) continue;
-
         //         if (nums[i] + nums[j] == target) return { i, j };
         //     }
         // }
@@ -24,7 +22,39 @@ public:
 
 
         // ================================
-        // Approach 2: hash map
+        // Approach 2: Sorting
+        // - Time  Complexity: O(N log N)
+        //   (Sorting takes O(N log N))
+        // - Space Complexity: O(N)
+        //   (To store numbers in vector)
+        // - Pros: Better than O(N²)
+        // - Cons: Uses extra space
+        // ================================
+        // vector<pair<int, int>> nice;
+        // for (int i = 0; i < nums.size(); ++i)
+        // {
+        //     nice.push_back({ nums[i], i });
+        // }
+        // sort(nice.begin(), nice.end());
+
+        // int p0 = 0;
+        // int p1 = nums.size() - 1;
+
+        // while (p0 < p1)
+        // {
+        //     int sum = nice[p0].first + nice[p1].first;
+        //     if (sum == target)
+        //     {
+        //         return {nice[p0].second, nice[p1].second};
+        //     }
+        //     else if (sum > target) p1--;
+        //     else p0++;
+        // }
+        // return {};
+
+        
+        // ================================
+        // Approach 3: Hash Map
         // - Time  Complexity: O()
         //   ()
         // - Space Complexity: O()
@@ -32,25 +62,15 @@ public:
         // - Pros: 
         // - Cons: 
         // ================================
-        vector<pair<int, int>> nice;
+        unordered_map<int, int> hash;
+
         for (int i = 0; i < nums.size(); ++i)
         {
-            nice.push_back({ nums[i], i });
-        }
-        sort(nice.begin(), nice.end());
-
-        int p0 = 0;
-        int p1 = nums.size() - 1;
-
-        while (p0 < p1)
-        {
-            int sum = nice[p0].first + nice[p1].first;
-            if (sum == target)
+            if (hash.find(target - nums[i]) != hash.end())
             {
-                return {nice[p0].second, nice[p1].second};
+                return { hash[target-nums[i]], i };
             }
-            else if (sum > target) p1--;
-            else p0++;
+            hash[nums[i]] = i;
         }
         return {};
     }
