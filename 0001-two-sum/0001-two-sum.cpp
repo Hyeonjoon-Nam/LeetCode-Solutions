@@ -66,9 +66,10 @@ public:
 
         for (int i = 0; i < nums.size(); ++i)
         {
-            if (hash.find(target - nums[i]) != hash.end())
+            int complement = target - nums[i];
+            if (hash.find(complement) != hash.end())
             {
-                return { hash[target-nums[i]], i };
+                return { hash[complement], i };
             }
             hash[nums[i]] = i;
         }
