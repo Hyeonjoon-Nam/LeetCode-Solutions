@@ -47,15 +47,19 @@ public:
         int longestStreak = 1;
         for (int num : hash)
         {
-            int currentNum = num;
-            int currentStreak = 1;
-
-            while (hash.count(currentNum + 1))
+            if (!hash.count(num - 1))
             {
-                currentNum++;
-                currentStreak++;
+                int currentNum = num;
+                int currentStreak = 1;
+
+                while (hash.count(currentNum + 1))
+                {
+                    currentNum++;
+                    currentStreak++;
+                }
+                longestStreak = max(longestStreak, currentStreak);
             }
-            longestStreak = max(longestStreak, currentStreak);
+            
         }
 
         return longestStreak;
