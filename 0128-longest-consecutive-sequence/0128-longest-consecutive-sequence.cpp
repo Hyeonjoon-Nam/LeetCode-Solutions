@@ -5,8 +5,8 @@ public:
         // Approach 1: Sorting
         // - Time  Complexity: O(N log N)
         //   (Sorting takes O(N log N). Traverse N elements)
-        // - Space Complexity: O(1)
-        //   (No extra space used)
+        // - Space Complexity: O(log N)
+        //   (std::sort takes O(log N))
         // - Pros: Easy to code. Intuitive
         // - Cons: Does not meet the requirement O(n)
         // ================================
@@ -35,25 +35,35 @@ public:
         // ================================
         // Approach 2: Hash set
         // - Time  Complexity: O(N)
-        //   ()
+        //   (Add to hash set, checks each element)
         // - Space Complexity: O(N)
-        //   ()
+        //   (To store numbers to unordered_set)
         // - Pros: Meets the requirement O(N)
-        // - Cons: High memory usage compared to O(1) space
+        // - Cons: High memory usage compared to O(log N) space
         // ================================
-        unordered_set<int> num_set(nums.begin(), nums.end());
-        int longestStreak = 0;
-        for (int num : num_set) {
-            if (!num_set.count(num - 1)) {
+        if (nums.size() == 0) return 0;
+
+        unordered_set<int> hash;
+        hash.reserve(nums.size());
+        hash.insert(nums.begin(), nums.end());
+
+        int longestStreak = 1;
+        for (int num : hash)
+        {
+            if (!hash.count(num - 1))
+            {
                 int currentNum = num;
                 int currentStreak = 1;
-                while (num_set.count(currentNum + 1)) {
-                    currentNum += 1;
-                    currentStreak += 1;
+
+                while (hash.count(currentNum + 1))
+                {
+                    currentNum++;
+                    currentStreak++;
                 }
                 longestStreak = max(longestStreak, currentStreak);
             }
         }
+
         return longestStreak;
     }
 };
