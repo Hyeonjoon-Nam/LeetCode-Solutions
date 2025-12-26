@@ -3,12 +3,12 @@ public:
     bool isValidSudoku(vector<vector<char>>& board) {
         // ================================
         // Approach 1: Hash map
-        // - Time  Complexity: O(N)
-        //   (Use multiple for-loop, but the total number of call is equals to O(N))
+        // - Time  Complexity: O(N²)
+        //   (Check each element. N * N times)
         // - Space Complexity: O(N)
         //   (To store numbers to unordered_set)
         // - Pros: Intuitive
-        // - Cons: 
+        // - Cons: Traverse the board multiple times
         // ================================
         // int size = 9;
         
@@ -65,12 +65,12 @@ public:
         
         // ================================
         // Approach 2: Single pass with fixed size array
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // - Time  Complexity: O(N²)
+        //   (Same as Approach 1)
+        // - Space Complexity: O(N²)
+        //   (Needs three (size * size) vectors)
+        // - Pros: Minimize traverse
+        // - Cons: Uses more memory
         // ================================
         // int size = 9;
         // vector<vector<bool>>  rows(size, vector<bool>(size, 0));
@@ -100,12 +100,12 @@ public:
         
         // ================================
         // Approach 3: Bit Manipulation
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // - Time  Complexity: O(N²)
+        //   (Just one traverse (colr * row))
+        // - Space Complexity: O(N)
+        //   (Only uses 27 integers (3 arrays))
+        // - Pros: Uses bit-manipulation -> Best performance.
+        // - Cons: Bit manipulation isn't that easy
         // ================================
         const int size = 9;
         int rows[size] = {0};
