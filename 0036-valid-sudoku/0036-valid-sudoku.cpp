@@ -72,27 +72,64 @@ public:
         // - Pros: 
         // - Cons: 
         // ================================
-        int size = 9;
-        vector<vector<bool>>  rows(size, vector<bool>(size, 0));
-        vector<vector<bool>>  cols(size, vector<bool>(size, 0));
-        vector<vector<bool>> boxes(size, vector<bool>(size, 0));
+        // int size = 9;
+        // vector<vector<bool>>  rows(size, vector<bool>(size, 0));
+        // vector<vector<bool>>  cols(size, vector<bool>(size, 0));
+        // vector<vector<bool>> boxes(size, vector<bool>(size, 0));
 
+        // for (int row = 0; row < size; row++)
+        // {
+        //     for (int col = 0; col < size; col++)
+        //     {
+        //         if (board[row][col] == '.') continue;
+        //         int pos = board[row][col] - '1';
+
+        //         if (rows[row][pos] == true) return false;
+        //         rows[row][pos] = true;
+
+        //         if (cols[col][pos] == true) return false;
+        //         cols[col][pos] = true;
+
+        //         int index = (row / 3) * 3 + col / 3;
+        //         if (boxes[index][pos] == true) return false;
+        //         boxes[index][pos] = true;
+        //     }
+        // }
+        // return true;
+
+        
+        // ================================
+        // Approach 3: Bit Manipulation
+        // - Time  Complexity: O()
+        //   ()
+        // - Space Complexity: O()
+        //   ()
+        // - Pros: 
+        // - Cons: 
+        // ================================
+        const int size = 9;
+        int rows[size] = {0};
+        int cols[size] = {0};
+        int boxes[size] = {0};
+        
         for (int row = 0; row < size; row++)
         {
             for (int col = 0; col < size; col++)
             {
                 if (board[row][col] == '.') continue;
-                int pos = board[row][col] - '1';
 
-                if (rows[row][pos] == true) return false;
-                rows[row][pos] = true;
+                int val = board[row][col] - '0';
+                int pos = 1 << (val - 1);
 
-                if (cols[col][pos] == true) return false;
-                cols[col][pos] = true;
+                if (rows[row] & pos) return false;
+                rows[row] |= pos;
 
+                if (cols[col] & pos) return false;
+                cols[col] |= pos;
+                
                 int index = (row / 3) * 3 + col / 3;
-                if (boxes[index][pos] == true) return false;
-                boxes[index][pos] = true;
+                if (boxes[index] & pos) return false;
+                boxes[index] |= pos;
             }
         }
         return true;
