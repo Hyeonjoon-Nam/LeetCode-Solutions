@@ -41,27 +41,19 @@ public:
         // - Pros: Meets the requirement O(N)
         // - Cons: High memory usage compared to O(1) space
         // ================================
-        if (nums.size() == 0) return 0;
-
-        unordered_set<int> hash(nums.begin(), nums.end());
-        int longestStreak = 1;
-        for (int num : hash)
-        {
-            if (!hash.count(num - 1))
-            {
+        unordered_set<int> num_set(nums.begin(), nums.end());
+        int longestStreak = 0;
+        for (int num : num_set) {
+            if (!num_set.count(num - 1)) {
                 int currentNum = num;
                 int currentStreak = 1;
-
-                while (hash.count(currentNum + 1))
-                {
-                    currentNum++;
-                    currentStreak++;
+                while (num_set.count(currentNum + 1)) {
+                    currentNum += 1;
+                    currentStreak += 1;
                 }
                 longestStreak = max(longestStreak, currentStreak);
             }
-            
         }
-
         return longestStreak;
     }
 };
