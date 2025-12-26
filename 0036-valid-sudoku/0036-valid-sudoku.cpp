@@ -19,45 +19,45 @@ public:
             for (int j = 0; j < size; j += 3)
             {
                 hash.clear();
-                for (int col = i; col < i + 3; col++)
+                for (int row = i; row < i + 3; row++)
                 {
-                    for (int row = j; row < j + 3; row++)
+                    for (int col = j; col < j + 3; col++)
                     {
-                        if (board[col][row] == '.') continue;
-                        if (hash.find(board[col][row]) != hash.end())
+                        if (board[row][col] == '.') continue;
+                        if (hash.find(board[row][col]) != hash.end())
                             return false;
                         
-                        hash.insert(board[col][row]);
+                        hash.insert(board[row][col]);
                     }
                 }
             }
         }
 
         // Check each col
-        for (int col = 0; col < size; ++col)
-        {
-            hash.clear();
-            for (int row = 0; row < size; ++row)
-            {
-                if (board[col][row] == '.') continue;
-                if (hash.find(board[col][row]) != hash.end())
-                    return false;
-                
-                hash.insert(board[col][row]);
-            }
-        }
-
-        // Check each row
         for (int row = 0; row < size; ++row)
         {
             hash.clear();
             for (int col = 0; col < size; ++col)
             {
-                if (board[col][row] == '.') continue;
-                if (hash.find(board[col][row]) != hash.end())
+                if (board[row][col] == '.') continue;
+                if (hash.find(board[row][col]) != hash.end())
                     return false;
                 
-                hash.insert(board[col][row]);
+                hash.insert(board[row][col]);
+            }
+        }
+
+        // Check each row
+        for (int col = 0; col < size; ++col)
+        {
+            hash.clear();
+            for (int row = 0; row < size; ++row)
+            {
+                if (board[row][col] == '.') continue;
+                if (hash.find(board[row][col]) != hash.end())
+                    return false;
+                
+                hash.insert(board[row][col]);
             }
         }
 
