@@ -59,12 +59,10 @@ public:
         for (int i = 0; i < n - 1; i++)
         {
             int complement = target - numbers[i];
-    // i+1 부터 끝까지 중 complement 이상의 값이 처음 나오는 위치 탐색
-    auto it = lower_bound(numbers.begin() + i + 1, numbers.end(), complement);
-    
-    if (it != numbers.end() && *it == complement) {
-        return { i + 1, static_cast<int>(it - numbers.begin()) + 1 };
-    }
+            auto it = lower_bound(numbers.begin() + i + 1, numbers.end(), complement);
+            
+            if (it != numbers.end() && *it == complement)
+                return { i + 1, static_cast<int>(it - numbers.begin()) + 1 };
         }
         return {};
     }
