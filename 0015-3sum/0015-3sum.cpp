@@ -5,8 +5,8 @@ public:
         // Approach 1: Sorting + Brute Force
         // - Time  Complexity: O(N³)
         //   (Iterate 3 for-loops)
-        // - Space Complexity: O(1)
-        //   (No extra space used except for the vector for output)
+        // - Space Complexity: O(log N)
+        //   (std::sort takes O(log N))
         // - Pros: Intuitive, easy to code
         // - Cons: Time limit exceeds
         // ================================
@@ -34,11 +34,11 @@ public:
 
         // ================================
         // Approach 2: 
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
+        // - Time  Complexity: O(N²)
+        //   (Iterating each element in first for-loop takes N, two-sum solution using two pointers takes N)
+        // - Space Complexity: O(log N)
+        //   (std::sort takes O(log N))
+        // - Pros: Pass the test, better than O(N³) of brute force
         // - Cons: 
         // ================================
         sort(nums.begin(), nums.end());
