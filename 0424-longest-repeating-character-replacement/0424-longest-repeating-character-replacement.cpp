@@ -1,6 +1,15 @@
 class Solution {
 public:
     int characterReplacement(string s, int k) {
+        // ================================
+        // Approach 1: Sliding window
+        // - Time  Complexity: O(N)
+        //   (Iterate all the elements once)
+        // - Space Complexity: O(1)
+        //   (Constant space used)
+        // - Pros: Optimal
+        // - Cons: 
+        // ================================
         int count[26] = { 0 };
         int maxCount = 0;
         int left = 0;
