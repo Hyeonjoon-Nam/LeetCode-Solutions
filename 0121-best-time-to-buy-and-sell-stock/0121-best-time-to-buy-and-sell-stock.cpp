@@ -29,31 +29,27 @@ public:
         
         // ================================
         // Approach 2: 
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
+        // - Time  Complexity: O(N)
+        //   (Iterate once)
+        // - Space Complexity: O(1)
+        //   (Constant space for mProfit, min_buy_price)
+        // - Pros: Optimal, passes all the tests
         // - Cons: 
         // ================================
-        int sum = 0;
-        int buy = INT_MAX;
-        int sell = 0;
-        bool bought = false;
-        for (int x : prices)
-        {
-            if (x < buy && !bought)
-            {
-                buy = x;
-            }
-            else if (x >= buy)
-            {
-                sum += x - buy;
-                buy = x;
-                bought = true;
-            }
+        int mProfit = 0;
+        int min_buy_price = INT_MAX;
 
+        for (int price : prices)
+        {
+            if (price < min_buy_price)
+            {
+                min_buy_price = price;
+            }
+            else if (price - min_buy_price > mProfit)
+            {
+                mProfit = price - min_buy_price;
+            }
         }
-        return sum;
+        return mProfit;
     }
 };
