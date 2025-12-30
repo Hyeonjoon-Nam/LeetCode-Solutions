@@ -25,11 +25,11 @@ public:
 
         // ================================
         // Approach 2: Two pointers
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
+        // - Time  Complexity: O(N)
+        //   (Iterate one for-loop)
+        // - Space Complexity: O(1)
+        //   (No extra space used)
+        // - Pros: Pass all the tests
         // - Cons: 
         // ================================
         int size = height.size();
