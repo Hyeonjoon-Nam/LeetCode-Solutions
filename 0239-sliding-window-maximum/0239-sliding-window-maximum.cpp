@@ -27,11 +27,11 @@ public:
 
         // ================================
         // Approach 2: Sliding window
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
+        // - Time  Complexity: O(N)
+        //   (Every element is pushed/popped at most once)
+        // - Space Complexity: O(k)
+        //   (Deque stores at most k elements)
+        // - Pros: Optimal
         // - Cons: 
         // ================================
         vector<int> ans;
