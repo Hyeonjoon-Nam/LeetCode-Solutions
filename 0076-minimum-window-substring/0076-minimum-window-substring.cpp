@@ -3,10 +3,10 @@ public:
     string minWindow(string s, string t) {
         // ================================
         // Approach 1: Sliding window
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
+        // - Time  Complexity: O(N)
+        //   (Iterate each element twice (maximum))
+        // - Space Complexity: O(m)
+        //   (Fixed size of 128)
         // - Pros: 
         // - Cons: 
         // ================================
