@@ -2,11 +2,11 @@ class Solution {
 public:
     bool isValid(string s) {
         // ================================
-        // Approach 1: 
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
+        // Approach 1: stack
+        // - Time  Complexity: O(N)
+        //   (Iterate all the elements once)
+        // - Space Complexity: O(N)
+        //   (To store to stack)
         // - Pros: 
         // - Cons: 
         // ================================
