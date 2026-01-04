@@ -1,6 +1,15 @@
 class Solution {
 public:
     int evalRPN(vector<string>& tokens) {
+        // ================================
+        // Approach 1: Stack
+        // - Time  Complexity: O(N)
+        //   (Iterate through each token once, stack operation are O(1))
+        // - Space Complexity: O(N)
+        //   (In the worst case, the stack stores all numbers before an operator)
+        // - Pros: Naturally follows the logic, efficient
+        // - Cons: Linear space required for the stack
+        // ================================
         stack<int> stk;
 
         for (string s : tokens)
