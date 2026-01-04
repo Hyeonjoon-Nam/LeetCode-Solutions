@@ -3,7 +3,7 @@ public:
     stack<pair<int, int>> minStack;
 public:
     // ================================
-    // Approach 1: 
+    // Approach 1: Single Stack with Pair
     // - Time  Complexity: O(1)
     //   (push, pop, top, getMin all take constant time)
     // - Space Complexity: O(N)
