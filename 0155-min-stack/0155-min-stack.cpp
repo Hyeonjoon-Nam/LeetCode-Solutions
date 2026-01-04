@@ -2,8 +2,17 @@ class MinStack {
 public:
     stack<pair<int, int>> minStack;
 public:
+    // ================================
+    // Approach 1: 
+    // - Time  Complexity: O(1)
+    //   (push, pop, top, getMin all take constant time)
+    // - Space Complexity: O(N)
+    //   (Each element is stored as a pair {value, current_min})
+    // - Pros: Easy to code, no extra logic for sync
+    // - Cons: Use 2x memory compared to a standard stack
+    // ================================
     MinStack() {
-        
+
     }
     
     void push(int val) {
