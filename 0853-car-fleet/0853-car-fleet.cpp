@@ -2,12 +2,12 @@ class Solution {
 public:
     int carFleet(int target, vector<int>& position, vector<int>& speed) {
         // ================================
-        // Approach 1: 
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
+        // Approach 1: Sorting
+        // - Time  Complexity: O(N log N)
+        //   (std::sort takes O(N log N))
+        // - Space Complexity: O(N)
+        //   (To store the pairs)
+        // - Pros: Optimal
         // - Cons: 
         // ================================
         vector<pair<int, int>> cars;
@@ -17,6 +17,7 @@ public:
         {
             cars.push_back({position[i], speed[i]});
         }
+
         sort(cars.begin(), cars.end(), [](auto a, auto b)
         {
             return a.first > b.first;
