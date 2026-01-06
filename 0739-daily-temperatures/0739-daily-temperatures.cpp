@@ -34,13 +34,13 @@ public:
 
         
         // ================================
-        // Approach 2: Stack
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // Approach 2: Monotonic Stack
+        // - Time  Complexity: O(N)
+        //   (Each index is pushed and popped exactly once)
+        // - Space Complexity: O(N)
+        //   (In the worst case, the stack stores all indices)
+        // - Pros: Optimal linear time solution, much faster than O(N²)
+        // - Cons: Requires O(N) extra space for stack
         // ================================
         stack<int> stk;
         int n = temperatures.size();
