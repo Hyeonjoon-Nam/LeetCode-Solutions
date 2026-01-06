@@ -10,20 +10,36 @@ public:
         // - Pros: Easy
         // - Cons: Doens't meet the requirement O(log N)
         // ================================
-        for (int i = 0; i < nums.size(); i++)
-        {
-            if (nums[i] == target) return i;
-        }
-        return -1;
+        // for (int i = 0; i < nums.size(); i++)
+        // {
+        //     if (nums[i] == target) return i;
+        // }
+        // return -1;
 
         // ================================
-        // Approach 1: 
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
+        // Approach 2: Find Upper bound
+        // - Time  Complexity: O(log N)
+        //   (Binary search)
+        // - Space Complexity: O(1)
+        //   (Constant space used)
+        // - Pros: Optimal for sorted arrays
         // - Cons: 
         // ================================
+        int left = 0;
+        int right = nums.size();
+        
+        while (left <= right)
+        {
+            int mid = left + (right - left) / 2;
+
+            if (nums[mid] == target)
+                return mid;
+            else if (nums[mid] <= target)
+                left = mid + 1;
+            else
+                right = mid - 1;
+        }
+
+        return -1;
     }
 };
