@@ -29,13 +29,13 @@ public:
         // return maxArea;
         
         // ================================
-        // Approach 2: Stack
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // Approach 2: Monotonic Stack
+        // - Time  Complexity: O(N)
+        //   (Iterate each elements once)
+        // - Space Complexity: O(N)
+        //   (To store to stack)
+        // - Pros: Optimal
+        // - Cons: Uses extra space for the stack
         // ================================
         heights.push_back(0);
         int n = heights.size();
