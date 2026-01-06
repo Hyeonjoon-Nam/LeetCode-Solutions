@@ -25,21 +25,35 @@ public:
         // - Pros: Optimal for sorted arrays
         // - Cons: 
         // ================================
-        int left = 0;
-        int right = nums.size() - 1;
+        // int left = 0;
+        // int right = nums.size() - 1;
         
-        while (left <= right)
-        {
-            int mid = left + (right - left) / 2;
+        // while (left <= right)
+        // {
+        //     int mid = left + (right - left) / 2;
 
-            if (nums[mid] == target)
-                return mid;
-            else if (nums[mid] <= target)
-                left = mid + 1;
-            else
-                right = mid - 1;
-        }
+        //     if (nums[mid] == target)
+        //         return mid;
+        //     else if (nums[mid] <= target)
+        //         left = mid + 1;
+        //     else
+        //         right = mid - 1;
+        // }
 
-        return -1;
+        // return -1;
+
+        // ================================
+        // Approach 3: Using upper_bound()
+        // - Time  Complexity: O(log N)
+        //   (std::upped_bound uses binary seach that takes O(log N))
+        // - Space Complexity: O(1)
+        //   (No extra space used)
+        // - Pros: Concise
+        // - Cons: 
+        // ================================
+        int index = upper_bound(nums.begin(), nums.end(), target) - nums.begin();
+
+        if (index > 0 && nums[index - 1] == target) return index - 1;
+        else return -1;
     }
 };
