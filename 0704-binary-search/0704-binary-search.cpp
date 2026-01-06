@@ -26,7 +26,7 @@ public:
         // - Cons: 
         // ================================
         int left = 0;
-        int right = nums.size();
+        int right = nums.size() - 1;
         
         while (left <= right)
         {
