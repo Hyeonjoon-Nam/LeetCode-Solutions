@@ -3,18 +3,17 @@ public:
     int minEatingSpeed(vector<int>& piles, int h) {
         // ================================
         // Approach 1: Binary search
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // - Time  Complexity: O(N * log(max(P)))
+        //   (N is the number of piles, log(max(P)) is the search space for speed)
+        // - Space Complexity: O(1)
+        //   (No extra data structures used)
+        // - Pros: Extremly efficient for large value ranges
+        // - Cons: Requires careful handling of integer overflow
         // ================================
         int n = piles.size();
         int left = 1;
-        int right = 0;
+        int right = *max_element(piles.begin(), piles.end());
         int ans = 0;
-        for (int x : piles) right = max(right, x);
 
         while (left <= right)
         {
