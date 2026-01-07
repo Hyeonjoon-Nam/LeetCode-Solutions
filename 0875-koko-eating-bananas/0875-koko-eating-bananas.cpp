@@ -19,7 +19,7 @@ public:
         while (left <= right)
         {
             int mid = left + (right - left) / 2;
-            int time = 0;
+            long long time = 0;
             for (int x : piles)
             {
                 time += (x + mid - 1) / mid;
