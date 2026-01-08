@@ -4,10 +4,10 @@ public:
         // ================================
         // Approach 1: Binary search
         // - Time  Complexity: O(log N)
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
+        //   (Binary search)
+        // - Space Complexity: O(1)
+        //   (No extra space used)
+        // - Pros: Optimal
         // - Cons: 
         // ================================
         int n = nums.size();
