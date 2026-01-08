@@ -3,12 +3,12 @@ public:
     int search(vector<int>& nums, int target) {
         // ================================
         // Approach 1: Find pivot -> Binary search
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // - Time  Complexity: O(log N)
+        //   (Two binary searches: 1. Find pivot, 2. Search target)
+        // - Space Complexity: O(1)
+        //   (Constant space used for pointers)
+        // - Pros: Logical separation, easier to debug
+        // - Cons: Slightly more verbose, two passes of binary search
         // ================================
         // int n = nums.size();
         // if (n == 0) return -1;
@@ -67,7 +67,11 @@ public:
         // ================================
         // Approach 2: One-Pass Binary Search
         // - Time  Complexity: O(log N)
+        //   (Identify the sorted half and narrow search in one pass)
         // - Space Complexity: O(1)
+        //   (Constant space used)
+        // - Pros: Concise, and slightly better constant performance.
+        // - Cons: Tricky conditional logic compared to two-pass approach.
         // ================================
         int left = 0, right = nums.size() - 1;
 
