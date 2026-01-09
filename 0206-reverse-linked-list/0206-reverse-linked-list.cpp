@@ -18,7 +18,7 @@ public:
         // - Space Complexity: O(N)
         //   (To store data to vector)
         // - Pros: Intuitive
-        // - Cons: Use extra space
+        // - Cons: High memory overhead due to extra vector and frequent heap allocations
         // ================================
         // ListNode* ans = new ListNode(0);
         // ListNode* save = ans;
@@ -42,11 +42,11 @@ public:
         // ================================
         // Approach 2: I
         // - Time  Complexity: O(N)
-        //   (Iterate each elements step by step)
+        //   (Iterate each elements exactly once)
         // - Space Complexity: O(1)
         //   (Constant space used for pointers)
-        // - Pros: Space efficient
-        // - Cons: 
+        // - Pros: Space efficient, no extra allocations
+        // - Cons: Modifies the original list structure
         // ================================
         ListNode* prev = nullptr;
         ListNode* curr = head;
