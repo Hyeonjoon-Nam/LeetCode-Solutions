@@ -3,12 +3,12 @@ public:
     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
         // ================================
         // Approach 1: Binary Search
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // - Time  Complexity: O(log(min(m, n)))
+        //   (Binary search is only performed on the shorter array)
+        // - Space Complexity: O(1)
+        //   (Constant space used for indexing pointers)
+        // - Pros: Optimal! Faster than O(log (m+n))
+        // - Cons: Implementation complexity
         // ================================
         int m = nums1.size(), n = nums2.size();
         if (m > n) return findMedianSortedArrays(nums2, nums1);
