@@ -1,12 +1,13 @@
 class TimeMap {
 public:
     // ================================
-    // Approach 1: 
-    // - Time  Complexity: O()
-    //   ()
-    // - Space Complexity: O()
-    //   ()
-    // - Pros: 
+    // Approach 1: Hash Map + Binary Search
+    // - Time  Complexity
+    //   - set: O(1) amortized
+    //   - get: O(log N) (Binary search on the vector of timestamps)
+    // - Space Complexity: O(M)
+    //   (M is the total number of set operations stored across all keys)
+    // - Pros: Optimal time for get(); cache-friendly due to std::vector
     // - Cons: 
     // ================================
     unordered_map<string, vector<pair<int, string>>> timemap;
