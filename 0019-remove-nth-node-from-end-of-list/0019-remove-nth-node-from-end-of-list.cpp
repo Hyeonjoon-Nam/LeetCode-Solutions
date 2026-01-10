@@ -40,13 +40,13 @@ public:
         // return head;
 
         // ================================
-        // Approach 2: One pass
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // Approach 2: One pass (Two pointers)
+        // - Time  Complexity: O(N)
+        //   (Traverse the list exactly once)
+        // - Space Complexity: O(1)
+        //   (Constant space used for pointers)
+        // - Pros: Optimal
+        // - Cons: Slightly more abstract logic
         // ================================
         if (head == nullptr) return nullptr;
 
