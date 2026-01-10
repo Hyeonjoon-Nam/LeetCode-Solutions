@@ -45,7 +45,7 @@ public:
         //   (Traverse the list exactly once)
         // - Space Complexity: O(1)
         //   (Constant space used for pointers)
-        // - Pros: Optimal
+        // - Pros: Optimal, meets the follow-up requirement (one pass)
         // - Cons: Slightly more abstract logic
         // ================================
         if (head == nullptr) return nullptr;
@@ -65,7 +65,9 @@ public:
             fast = fast->next;
         }
 
+        ListNode* noteToDelete = slow->next;
         slow->next = slow->next->next;
+        delete noteToDelete;
         return head;
     }
 };
