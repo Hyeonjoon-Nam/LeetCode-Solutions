@@ -41,7 +41,7 @@ public:
         // return ans->next;
 
         // ================================
-        // Approach 2: One pass
+        // Approach 2: One pass iteration
         // - Time  Complexity: O(n+m)
         //   (Iterate)
         // - Space Complexity: O(1)
@@ -49,31 +49,55 @@ public:
         // - Pros: Optimal, space efficient
         // - Cons: 
         // ================================
-        ListNode* head = new ListNode(0);
-        ListNode* ans = head;
+        // ListNode* head = new ListNode(0);
+        // ListNode* ans = head;
 
-        while (true) {
-            if (list1 == nullptr && list2 == nullptr) {
-                break;
-            } else if (list1 == nullptr) {
-                head->next = list2;
-                list2 = list2->next;
-            } else if (list2 == nullptr) {
-                head->next = list1;
+        // while (true) {
+        //     if (list1 == nullptr && list2 == nullptr) {
+        //         break;
+        //     } else if (list1 == nullptr) {
+        //         head->next = list2;
+        //         list2 = list2->next;
+        //     } else if (list2 == nullptr) {
+        //         head->next = list1;
+        //         list1 = list1->next;
+        //     } else {
+        //         int val1 = list1->val;
+        //         int val2 = list2->val;
+        //         if (val1 < val2) {
+        //             head->next = list1;
+        //             list1 = list1->next;
+        //         } else {
+        //             head->next = list2;
+        //             list2 = list2->next;
+        //         }
+        //     }
+        //     head = head->next;
+        // }
+        // return ans->next;
+
+        // ================================
+        // Approach 3: More concise iteration
+        // - Time  Complexity: O(n+m)
+        //   ()
+        // - Space Complexity: O(1)
+        //   (Constant space used for pointers)
+        // - Pros: 
+        // - Cons: 
+        // ================================
+        ListNode dummy(-1);
+        ListNode* prev = &dummy;
+        while (list1 != nullptr && list2 != nullptr) {
+            if (list1->val <= list2->val) {
+                prev->next = list1;
                 list1 = list1->next;
             } else {
-                int val1 = list1->val;
-                int val2 = list2->val;
-                if (val1 < val2) {
-                    head->next = list1;
-                    list1 = list1->next;
-                } else {
-                    head->next = list2;
-                    list2 = list2->next;
-                }
+                prev->next = list2;
+                list2 = list2->next;
             }
-            head = head->next;
+            prev = prev->next;
         }
-        return ans->next;
+        prev->next = list1 == nullptr ? list2 : list1;
+        return dummy.next;
     }
 };
