@@ -11,6 +11,15 @@
 class Solution {
 public:
     void reorderList(ListNode* head) {
+        // ================================
+        // Approach 1: Split, Reverse, and Merge
+        // - Time  Complexity: O(N)
+        //   (Finding middle takes O(N/2), Reverse takes O(N/2), Merge takes O(N/2), so totally O(N))
+        // - Space Complexity: O(1)
+        //   (Constant space used for pointers)
+        // - Pros: OPtimal
+        // - Cons: 
+        // ================================
         if (head == nullptr) return;
 
         ListNode* slow = head;
