@@ -13,10 +13,10 @@ public:
     ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
         // ================================
         // Approach 1: Copy and sort
-        // - Time  Complexity: O(N)
+        // - Time  Complexity: O(n+m)
         //   (Iterate each list once, iterate vector)
-        // - Space Complexity: O(N)
-        //   (To store elements to a vector)
+        // - Space Complexity: O(n+m)
+        //   (To store all the elements to a vector)
         // - Pros: Intuitive
         // - Cons: Uses extra space
         // ================================
@@ -42,11 +42,11 @@ public:
 
         // ================================
         // Approach 2: One pass
-        // - Time  Complexity: O(N)
-        //   ()
+        // - Time  Complexity: O(n+m)
+        //   (Iterate)
         // - Space Complexity: O(1)
-        //   ()
-        // - Pros: 
+        //   (Constant space used for pointers)
+        // - Pros: Optimal, space efficient
         // - Cons: 
         // ================================
         ListNode* head = new ListNode(0);
