@@ -12,13 +12,13 @@ class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
         // ================================
-        // Approach 1: 
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // Approach 1: Iterate digit addition
+        // - Time  Complexity: O(max(m, n))
+        //   (M, N are lengths of l1 and l2. We traverse both lists once)
+        // - Space Complexity: O(max(m, n))
+        //   (New list stores the sum; length is at most max(M, N) + 1)
+        // - Pros: Simple
+        // - Cons: Requires manual carry handling
         // ================================
         ListNode dummy(0);
         ListNode* head = &dummy;
