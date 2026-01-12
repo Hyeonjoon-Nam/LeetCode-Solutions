@@ -25,20 +25,13 @@ public:
         int sum;
         int carry = 0;
         while (l1 != nullptr || l2 != nullptr) {
-            int num1, num2;
-            if (l1 == nullptr) num1 = 0;
-            else num1 = l1->val;
-            if (l2 == nullptr) num2 = 0;
-            else num2 = l2->val;
+            int num1 = l1 == nullptr ? 0 : l1->val;
+            int num2 = l2 == nullptr ? 0 : l2->val;
 
             sum = num1 + num2 + carry;
-            if (sum >= 10) {
-                carry = 1;
-                sum -= 10;
-            } else {
-                carry = 0;
-            }
-            head->next = new ListNode(sum);
+            carry = sum / 10;
+
+            head->next = new ListNode(sum % 10);
             head = head->next;
 
             if (l1) l1 = l1->next;
