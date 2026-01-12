@@ -35,12 +35,13 @@ public:
         // - Pros: Space efficient
         // - Cons: 
         // ================================
+        if (head == nullptr) return false;
         ListNode* slow = head;
-        ListNode* fast = head;
+        ListNode* fast = head->next;
         while (fast != nullptr && fast->next != nullptr) {
+            if (fast == slow) return true;
             slow = slow->next;
             fast = fast->next->next;
-            if (slow == fast) return true;
         }
         return false;
     }
