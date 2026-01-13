@@ -20,13 +20,13 @@ public:
         // return -1;
 
         // ================================
-        // Approach 2: 
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // Approach 2: Floyd's algorithm
+        // - Time  Complexity: O(N)
+        //   (Finding meeting point, finding entry point)
+        // - Space Complexity: O(1)
+        //   (Constant space without modifying the input array)
+        // - Pros: Meets all constraints (No extra space, No modification)
+        // - Cons: Slightly compley logic
         // ================================
         int slow = nums[0];
         int fast = nums[0];
