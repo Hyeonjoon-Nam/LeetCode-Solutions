@@ -1,42 +1,36 @@
 class LRUCache {
-public:
+private:
     int capacity;
-    unordered_map<int, list<pair<int, int>>::iterator> dic;
-    list<pair<int, int>> lru;
+    list<pair<int, int>> cacheList;
+    unordered_map<int, list<pair<int, int>>::iterator> cacheMap;
 
-    LRUCache(int capacity) { this->capacity = capacity; }
-
-    int get(int key) {
-        auto it = dic.find(key);
-
-        if (it == dic.end()) {
-            return -1;
-        }
-
-        int value = it->second->second;
-        lru.erase(it->second);
-        lru.push_front({key, value});
-
-        dic.erase(it);
-        dic[key] = lru.begin();
-        return value;
+public:
+    LRUCache(int capacity) : capacity(capacity) {
+  
     }
-
-    void put(int key, int value) {
-        auto it = dic.find(key);
-
-        if (dic.find(key) != dic.end()) {
-            lru.erase(it->second);
-            dic.erase(it);
+    
+    int get(int key) {
+        auto it = cacheMap.find(key);
+        if (it != cacheMap.end()) {
+            cacheList.splice(cacheList.begin(), cacheList, it->second);
+            return it->second->second;
         }
-
-        lru.push_front({key, value});
-        dic[key] = lru.begin();
-
-        if (dic.size() > capacity) {
-            auto it = dic.find(lru.rbegin()->first);
-            dic.erase(it);
-            lru.pop_back();
+        return -1;
+    }
+    
+    void put(int key, int value) {
+        auto it = cacheMap.find(key);
+        if (it != cacheMap.end()) {
+            it->second->second = value;
+            cacheList.splice(cacheList.begin(), cacheList, it->second);
+        } else {
+            if (cacheList.size() == capacity) {
+                int keyToRemove = cacheList.back().first;
+                cacheMap.erase(keyToRemove);
+                cacheList.pop_back();
+            }
+            cacheList.push_front({key, value});
+            cacheMap[key] = cacheList.begin();
         }
     }
 };
