@@ -72,13 +72,13 @@ public:
 
         Node* ptr_old_list = head;
         Node* ptr_new_list = head->next;
-        Node* head_old = head->next;
+        Node* head_new = head->next;
         while (ptr_old_list != nullptr) {
             ptr_old_list->next = ptr_old_list->next->next;
             ptr_new_list->next = (ptr_new_list->next != nullptr) ? ptr_new_list->next->next : nullptr;
             ptr_old_list = ptr_old_list->next;
             ptr_new_list = ptr_new_list->next;
         }
-        return head_old;
+        return head_new;
     }
 };
