@@ -1,4 +1,13 @@
 class LRUCache {
+    // ================================
+    // Approach 1: Hash Map + Doubly Linked List
+    // - Time  Complexity: O(1)
+    //   (Hash map provides O(1) access, and list allows O(1) movement via splice)
+    // - Space Complexity: O(capacity)
+    //   (Stores at most 'capacity' number of items in both map and list)
+    // - Pros: Optimal time complexity. Splice avoids expensive memory reallocations
+    // - Cons: Not cache-friendly
+    // ================================
 private:
     int capacity;
     list<pair<int, int>> cacheList;
