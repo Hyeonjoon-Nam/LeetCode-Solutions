@@ -20,7 +20,7 @@ public:
         // return -1;
 
         // ================================
-        // Approach 2: Floyd's algorithm
+        // Approach 2: Floyd's Tortoise and Hare
         // - Time  Complexity: O(N)
         //   (Finding meeting point, finding entry point)
         // - Space Complexity: O(1)
