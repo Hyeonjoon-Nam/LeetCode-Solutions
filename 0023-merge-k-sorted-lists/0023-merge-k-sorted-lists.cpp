@@ -13,6 +13,33 @@ public:
     ListNode* mergeKLists(vector<ListNode*>& lists) {
         // ================================
         // Approach 1: 
+        // - Time  Complexity: O(N log N)
+        //   ()
+        // - Space Complexity: O(N log N)
+        //   ()
+        // - Pros: 
+        // - Cons: 
+        // ================================
+        // ListNode dummy(0);
+        // ListNode* head = &dummy;
+        // vector<int> temp;
+        // for (ListNode* l : lists) {
+        //     while (l != nullptr) {
+        //         temp.push_back(l->val);
+        //         l = l->next;
+        //     }
+        // }
+        // sort(temp.begin(), temp.end());
+
+        // for (int x : temp) {
+        //     head->next = new ListNode(x);
+        //     head = head->next;
+        // }
+
+        // return dummy.next;
+
+        // ================================
+        // Approach 2: 
         // - Time  Complexity: O()
         //   ()
         // - Space Complexity: O()
@@ -20,32 +47,30 @@ public:
         // - Pros: 
         // - Cons: 
         // ================================
-        ListNode dummy(0);
-        ListNode* head = &dummy;
-        vector<int> temp;
+        if (lists.empty()) return nullptr;
+
+        ListNode* res = nullptr;
         for (ListNode* l : lists) {
-            while (l != nullptr) {
-                temp.push_back(l->val);
-                l = l->next;
+            res = mergeTwoLists(res, l);
+        }
+        return res;
+    }
+
+    ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
+        ListNode dummy(0);
+        ListNode* tail = &dummy;
+
+        while (l1 && l2) {
+            if (l1->val <= l2->val) {
+                tail->next = l1;
+                l1 = l1->next;
+            } else {
+                tail->next = l2;
+                l2 = l2->next;
             }
+            tail = tail->next;
         }
-        sort(temp.begin(), temp.end());
-
-        for (int x : temp) {
-            head->next = new ListNode(x);
-            head = head->next;
-        }
-
+        tail->next = l1 ? l1 : l2;
         return dummy.next;
-
-        // ================================
-        // Approach 1: 
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
-        // ================================
     }
 };
