@@ -56,13 +56,13 @@ public:
         // return res;
 
         // ================================
-        // Approach 3: 
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // Approach 3: Merge with Divide and Conquer
+        // - Time  Complexity: O(N log k)
+        //   (There are (log k) merge levels, and each level processes N nodes)
+        // - Space Complexity: O(1)
+        //   (Constant space used for pointers)
+        // - Pros: Optimal time/space trade-off.
+        // - Cons: Slightly more complex logic.
         // ================================
         int amount = lists.size();
         int interval = 1;
