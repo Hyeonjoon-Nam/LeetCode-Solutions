@@ -12,13 +12,13 @@ class Solution {
 public:
     ListNode* reverseKGroup(ListNode* head, int k) {
         // ================================
-        // Approach 1: 
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // Approach 1: Store in vector and rebuild
+        // - Time  Complexity: O(N)
+        //   (Traverse list to vector: O(N), reverse chunks: O(N), rebuild: O(N))
+        // - Space Complexity: O(N)
+        //   (Vector stores N values, and new ListNode instances are created)
+        // - Pros: Intuitive and less error-prone in pointer logic
+        // - Cons: High memory overhead
         // ================================
         // if (head == nullptr) return nullptr;
         // ListNode* temp = head;
@@ -44,13 +44,13 @@ public:
         // return dummy.next;
 
         // ================================
-        // Approach 2: 
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // Approach 2: In-place reversal with constant space
+        // - Time  Complexity: O(N)
+        //   (Each node is visited and its pointer modified exactly once)
+        // - Space Complexity: O(1)
+        //   (Constant space used for pointers)
+        // - Pros: Momory efficient, optimal
+        // - Cons: Complex pointer management
         // ================================
         if (head == nullptr || k == 1) return head;
 
