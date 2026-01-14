@@ -20,31 +20,31 @@ public:
         // - Pros: 
         // - Cons: 
         // ================================
-        if (head == nullptr) return nullptr;
-        ListNode* temp = head;
-        vector<int> v;
-        while (temp != nullptr) {
-            v.push_back(temp->val);
-            temp = temp->next;
-        }
-        int n = v.size();
-        if (k > n) return head;
+        // if (head == nullptr) return nullptr;
+        // ListNode* temp = head;
+        // vector<int> v;
+        // while (temp != nullptr) {
+        //     v.push_back(temp->val);
+        //     temp = temp->next;
+        // }
+        // int n = v.size();
+        // if (k > n) return head;
 
-        for (int i = 0; i + k <= n; i += k) {
-            reverse(v.begin() + i, v.begin() + i + k);
-        }
+        // for (int i = 0; i + k <= n; i += k) {
+        //     reverse(v.begin() + i, v.begin() + i + k);
+        // }
 
-        ListNode dummy(0);
-        ListNode* point = &dummy;
-        for (int x : v) {
-            point->next = new ListNode(x);
-            point = point->next;
-        }
+        // ListNode dummy(0);
+        // ListNode* point = &dummy;
+        // for (int x : v) {
+        //     point->next = new ListNode(x);
+        //     point = point->next;
+        // }
         
-        return dummy.next;
+        // return dummy.next;
 
         // ================================
-        // Approach 1: 
+        // Approach 2: 
         // - Time  Complexity: O()
         //   ()
         // - Space Complexity: O()
@@ -52,13 +52,38 @@ public:
         // - Pros: 
         // - Cons: 
         // ================================
-        // if (head == nullptr) return nullptr;
-        // ListNode* temp = head;
-        // int n = 1;
-        // while (temp != nullptr) {
-        //     temp = temp->next;
-        //     n++;
-        // }
-        // if (n < k) return head;
+        if (head == nullptr || k == 1) return head;
+
+        ListNode dummy(0, head);
+        ListNode* groupPrev = &dummy;
+
+        while (true) {
+            ListNode* kth = getKth(groupPrev, k);
+            if (kth == nullptr) break;
+
+            ListNode* groupNext = kth->next;
+
+            ListNode* prev = groupNext;
+            ListNode* curr = groupPrev->next;
+            while(curr != groupNext) {
+                ListNode* temp = curr->next;
+                curr->next = prev;
+                prev = curr;
+                curr = temp;
+            }
+
+            ListNode* temp = groupPrev->next;
+            groupPrev->next = kth;
+            groupPrev = temp;
+        }
+        return dummy.next;
+    }
+
+    ListNode* getKth(ListNode* curr, int k) {
+        while (curr && k > 0) {
+            curr = curr->next;
+            k--;
+        }
+        return curr;
     }
 };
