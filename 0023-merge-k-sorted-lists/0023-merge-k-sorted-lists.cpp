@@ -20,23 +20,23 @@ public:
         // - Pros: 
         // - Cons: 
         // ================================
-        // ListNode dummy(0);
-        // ListNode* head = &dummy;
-        // vector<int> temp;
-        // for (ListNode* l : lists) {
-        //     while (l != nullptr) {
-        //         temp.push_back(l->val);
-        //         l = l->next;
-        //     }
-        // }
-        // sort(temp.begin(), temp.end());
+        ListNode dummy(0);
+        ListNode* head = &dummy;
+        vector<int> temp;
+        for (ListNode* l : lists) {
+            while (l != nullptr) {
+                temp.push_back(l->val);
+                l = l->next;
+            }
+        }
+        sort(temp.begin(), temp.end());
 
-        // for (int x : temp) {
-        //     head->next = new ListNode(x);
-        //     head = head->next;
-        // }
+        for (int x : temp) {
+            head->next = new ListNode(x);
+            head = head->next;
+        }
 
-        // return dummy.next;
+        return dummy.next;
 
         // ================================
         // Approach 2: 
@@ -47,13 +47,13 @@ public:
         // - Pros: 
         // - Cons: 
         // ================================
-        if (lists.empty()) return nullptr;
+        // if (lists.empty()) return nullptr;
 
-        ListNode* res = nullptr;
-        for (ListNode* l : lists) {
-            res = mergeTwoLists(res, l);
-        }
-        return res;
+        // ListNode* res = nullptr;
+        // for (ListNode* l : lists) {
+        //     res = mergeTwoLists(res, l);
+        // }
+        // return res;
     }
 
     ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
