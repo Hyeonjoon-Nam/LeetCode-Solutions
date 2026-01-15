@@ -13,7 +13,7 @@ class Solution {
 public:
     TreeNode* invertTree(TreeNode* root) {
         // ================================
-        // Approach 1: Swap left and right
+        // Approach 1: 
         // - Time  Complexity: O()
         //   ()
         // - Space Complexity: O()
@@ -21,5 +21,18 @@ public:
         // - Pros: 
         // - Cons: 
         // ================================
+        invert(root);
+        return root;
+    }
+
+    void invert(TreeNode* node) {
+        if (node == nullptr) return;
+
+        invert(node->left);
+        invert(node->right);
+        
+        swap(node->left, node->right);
+
+        return;
     }
 };
