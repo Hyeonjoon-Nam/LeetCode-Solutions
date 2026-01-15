@@ -26,15 +26,15 @@ public:
 
         // ================================
         // Approach 2: Iterative BFS
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // - Time  Complexity: O(N)
+        //   (Every node is visited once)
+        // - Space Complexity: O(w)
+        //   (w is the maximum width of the tree.)
+        // - Pros: Avoids recursion stack overflow. Process level by level.
+        // - Cons: Requires extra memory for the queue.
         // ================================
         if (root == nullptr) return nullptr;
-        
+
         queue<TreeNode*> q;
         q.push(root);
 
