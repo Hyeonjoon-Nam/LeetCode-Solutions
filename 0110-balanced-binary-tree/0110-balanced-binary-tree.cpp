@@ -14,25 +14,25 @@ public:
     bool ans = true;
     bool isBalanced(TreeNode* root) {
         // ================================
-        // Approach 1: 
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // Approach 1: Top-down DFS with global flag
+        // - Time  Complexity: O(N)
+        //   (Visits all nodes regardless of balance status)
+        // - Space Complexity: O(h)
+        //   (Recursive call stack space)
+        // - Pros: Simple and intuitive logic.
+        // - Cons: Inefficient for large trees because it lacks an early exit mechanism.
         // ================================
         // depth(root);
         // return ans;
 
         // ================================
-        // Approach 1: 
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // Approach 2: Bottom-up DFS (+ Early Exit)
+        // - Time  Complexity: O(N)
+        //   (In the best case of early failure, it's faster than O(N))
+        // - Space Complexity: O(h)
+        //   (Balanced tree: O(log N), Skewed tree: O(N))
+        // - Pros: Optimal performance.
+        // - Cons: Error propagation logic (-1) needs to be handled at each step.
         // ================================
         return checkHeight(root) != -1;
     }
