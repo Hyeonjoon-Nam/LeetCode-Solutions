@@ -14,6 +14,16 @@ private:
     int diameter = 0;
 public:
     int diameterOfBinaryTree(TreeNode* root) {
+        // ================================
+        // Approach 1: DFS with global variable
+        // - Time  Complexity: O(N)
+        //   (Iterate each node once)
+        // - Space Complexity: O(h)
+        //   (h is the height of the tree)
+        // - Pros: Compute height and diameter in a single pass.
+        // - Cons: Uses member variable.
+        // ================================
+
         depth(root);
         return diameter - 1;
     }
