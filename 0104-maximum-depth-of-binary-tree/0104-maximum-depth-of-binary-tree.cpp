@@ -37,7 +37,7 @@ public:
 
         queue<TreeNode*> q;
         q.push(root);
-        int depth = 1;
+        int depth = 0;
 
         while (!q.empty()) {
             int levelSize = q.size();
@@ -47,7 +47,7 @@ public:
                 q.pop();
 
                 if (curr->left) q.push(curr->left);
-                if (curr->left) q.push(curr->left);
+                if (curr->right) q.push(curr->right);
             }
             depth++;
         }
