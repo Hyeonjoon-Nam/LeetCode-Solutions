@@ -15,9 +15,9 @@ public:
         // ================================
         // Approach 1: Recursive DFS
         // - Time  Complexity: O(N)
-        //   ()
+        //   (Every node is processed once)
         // - Space Complexity: O(h)
-        //   ()
+        //   (h is the height of the tree)
         // - Pros: Extremly concise.
         // - Cons: Recursive overhead.
         // ================================
