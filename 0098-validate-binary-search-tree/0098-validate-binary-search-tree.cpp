@@ -19,7 +19,7 @@ public:
         // - Space Complexity: O(h)
         //   (h is the height of tree)
         // - Pros: Intuitive.
-        // - Cons: Recursion overhead
+        // - Cons: Recursion overhead.
         // ================================
         // if (root == nullptr) return true;
         // return dfs(root, LONG_MIN, LONG_MAX);
@@ -30,8 +30,8 @@ public:
         //   (Visits each node once)
         // - Space Complexity: O(h)
         //   (h is the height of tree)
-        // - Pros: 
-        // - Cons: Need to track the previous node
+        // - Pros: No need for boundary values.
+        // - Cons: Need to track the previous node using a member variable.
         // ================================
         return inorder(root);
     }
