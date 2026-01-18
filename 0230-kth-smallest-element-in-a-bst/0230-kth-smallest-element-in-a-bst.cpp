@@ -41,7 +41,7 @@ public:
             }
         }
         sort(v.begin(), v.end());
-        for (int x : v) cout<<x<<endl;
+
         if (k > v.size()) return -1;
         return v[k - 1];
     }
