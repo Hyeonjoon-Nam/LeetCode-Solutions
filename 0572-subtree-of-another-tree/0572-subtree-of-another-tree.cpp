@@ -21,12 +21,12 @@ public:
         // - Pros: Highly modular.
         // - Cons: Inefficient if many nodes have the same value.
         // ================================
-        // if (subRoot == nullptr) return true;
-        // if (root == nullptr) return false;
+        if (subRoot == nullptr) return true;
+        if (root == nullptr) return false;
 
-        // if (isSameTree(root, subRoot)) return true;
+        if (isSameTree(root, subRoot)) return true;
 
-        // return isSubtree(root->left, subRoot) || isSubtree(root->right, subRoot);
+        return isSubtree(root->left, subRoot) || isSubtree(root->right, subRoot);
 
         // ================================
         // Approach 2: String serialization
@@ -37,13 +37,13 @@ public:
         // - Pros: Faster than the first approach.
         // - Cons: Requires carefull delimiter/null handling.
         // ================================
-        if (!subRoot) return true;
-        if (!root) return false;
+        // if (!subRoot) return true;
+        // if (!root) return false;
 
-        string s1 = Serialize(root);
-        string s2 = Serialize(subRoot);
+        // string s1 = Serialize(root);
+        // string s2 = Serialize(subRoot);
         
-        return s1.find(s2) != string::npos;
+        // return s1.find(s2) != string::npos;
     }
 
     // For approach 1
