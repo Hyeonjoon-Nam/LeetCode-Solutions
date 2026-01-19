@@ -26,10 +26,16 @@ public:
         for (int i = 0; i < inorder.size(); i++) {
             inorderIndexMap[inorder[i]] = i;
         }
+        
         return arrayToTree(preorder, 0, preorder.size() - 1);
     }
+
+public:
     int preorderIndex = 0;
     unordered_map<int, int> inorderIndexMap;
+
+public:
+    // For approach 1
     TreeNode* arrayToTree(vector<int>& preorder, int left, int right) {
         if (left > right) return nullptr;
 
