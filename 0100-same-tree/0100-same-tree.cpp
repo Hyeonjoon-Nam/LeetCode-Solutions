@@ -30,11 +30,11 @@ public:
 
         // ================================
         // Approach 2: Iterative BFS
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
+        // - Time  Complexity: O(N)
+        //   (N is the number of nodes in the smaller tree. Visits each node once)
+        // - Space Complexity: O(W)
+        //   (W is the maximum width of the tree. The queue stores one level of pairs)
+        // - Pros: No recursion overhead, avoids stack overflow.
         // - Cons: 
         // ================================
         if (p == nullptr && q == nullptr) return true;
@@ -47,7 +47,7 @@ public:
             int levelSize = myQ.size();
 
             for (int i = 0; i < levelSize; i++) {
-                auto& it = myQ.front();
+                auto it = myQ.front();
                 myQ.pop();
 
                 TreeNode* t1 = it.first;
