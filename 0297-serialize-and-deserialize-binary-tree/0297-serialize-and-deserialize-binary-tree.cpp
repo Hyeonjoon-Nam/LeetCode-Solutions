@@ -23,11 +23,13 @@ public:
             q.pop();
 
             if (curr) {
-                res += to_string(curr->val) + ",";
+                res.append(to_string(curr->val) + ",");
+                //res += to_string(curr->val) + ",";
                 q.push(curr->left);
                 q.push(curr->right);
             } else {
-                res += "null,";
+                //res += "null,";
+                res.append("null,");
             }
         }
         cout<<res<<endl;
