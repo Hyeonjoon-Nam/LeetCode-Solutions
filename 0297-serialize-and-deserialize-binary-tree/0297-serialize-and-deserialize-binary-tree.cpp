@@ -9,7 +9,15 @@
  */
 class Codec {
 public:
-
+    // ================================
+    // Approach 1: BFS (Level Order Traversal)
+    // - Time  Complexity: O(N)
+    //   (Both serialize and deserialize visit each node exactly once.)
+    // - Space Complexity: O(N)
+    //   (Stores the entire tree in a string and uses a queue for BFS.)
+    // - Pros: Non-recursive.
+    // - Cons: Resulting string can be longer due to leaf node nulls.
+    // ================================
     // Encodes a tree to a single string.
     string serialize(TreeNode* root) {
         if (!root) return "#";
@@ -32,7 +40,6 @@ public:
                 res.append("null,");
             }
         }
-        cout<<res<<endl;
         return res;
     }
 
