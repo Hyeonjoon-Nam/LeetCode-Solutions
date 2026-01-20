@@ -6,7 +6,7 @@ public:
 public:
     // ================================
     // Approach 1: Min-Heap (K-sized)
-    // - Time  Complexity: O()
+    // - Time  Complexity: O(N log K)
     //   (Constructor: O(N log K), add(): O(log K))
     // - Space Complexity: O(K)
     //   (Only stores the K largest elements)
