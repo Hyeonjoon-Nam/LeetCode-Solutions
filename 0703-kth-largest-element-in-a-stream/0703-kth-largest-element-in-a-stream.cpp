@@ -19,7 +19,6 @@ public:
         for (int x : nums) {
             add(x);
         }
-
     }
     
     int add(int val) {
