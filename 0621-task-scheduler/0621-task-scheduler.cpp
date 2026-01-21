@@ -44,13 +44,13 @@ public:
         // return time;
 
         // ================================
-        // Approach 2: 
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // Approach 2: Greedy Math
+        // - Time  Complexity: O(N)
+        //   (Iterates through the task list once to count frequencies.)
+        // - Space Complexity: O(1)
+        //   (Uses a fixed-size array of 26 to store frequencies.)
+        // - Pros: Extreamly efficient, O(1) space and avoids heap overhead.
+        // - Cons: Less intuitive than approach 1.
         // ================================
         int freq[26] = {};
         int maxCount = 0;
