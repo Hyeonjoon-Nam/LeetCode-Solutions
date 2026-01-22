@@ -1,13 +1,15 @@
 class Twitter {
 public:
     // ================================
-    // Approach 1: 
-    // - Time  Complexity: O()
-    //   ()
-    // - Space Complexity: O()
-    //   ()
-    // - Pros: 
-    // - Cons: 
+    // Approach 1: Timestamped Min-Heap
+    // - Time  Complexity: 
+    //   Post: O(1)
+    //   getNewsFeed: O(F * T * log10) (followers, average tweets per user)
+    //   Follow/Unfollow: O(1) average
+    // - Space Complexity: O(U + T)
+    //   (U: total relationships, T: total tweets stored in memory.)
+    // - Pros: Accurate chronological sorting using global timestamp.
+    // - Cons: getNewsFeed becomes slow if a user follows many people with thousands of tweets
     // ================================
     unordered_map<int, vector<pair<int, int>>> tweets;
     unordered_map<int, unordered_set<int>> following;
