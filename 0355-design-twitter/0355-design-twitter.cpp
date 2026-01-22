@@ -26,9 +26,11 @@ public:
     vector<int> getNewsFeed(int userId) {
         priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> minHeap;
 
-        for (auto& t : tweets[userId]) {
-            minHeap.push(t);
+        int count = 0;
+        for (auto it = tweets[userId].rbegin(); it != tweets[userId].rend() && count < 10; ++it) {
+            minHeap.push(*it);
             if (minHeap.size() > 10) minHeap.pop();
+            count++;
         }
 
         for (int followeeId : following[userId]) {
