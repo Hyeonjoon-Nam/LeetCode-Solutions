@@ -1,5 +1,14 @@
 class Twitter {
 public:
+    // ================================
+    // Approach 1: 
+    // - Time  Complexity: O()
+    //   ()
+    // - Space Complexity: O()
+    //   ()
+    // - Pros: 
+    // - Cons: 
+    // ================================
     unordered_map<int, vector<pair<int, int>>> tweets;
     unordered_map<int, unordered_set<int>> following;
     int timeStamp = 0;
@@ -21,9 +30,11 @@ public:
         }
 
         for (int followeeId : following[userId]) {
-            for (auto& t : tweets[followeeId]) {
-                minHeap.push(t);
+            int count = 0;
+            for (auto it = tweets[followeeId].rbegin(); it != tweets[followeeId].rend() && count < 10; ++it) {
+                minHeap.push(*it);
                 if (minHeap.size() > 10) minHeap.pop();
+                count++;
             }
         }
 
