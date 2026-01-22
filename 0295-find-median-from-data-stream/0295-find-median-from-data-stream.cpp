@@ -1,36 +1,31 @@
 class MedianFinder {
 public:
-    priority_queue<int> q;
+    priority_queue<int> leftMax;
+    priority_queue<int, vector<int>, greater<int>> rightMin;
 
+public:
     MedianFinder() {
         
     }
     
     void addNum(int num) {
-        q.push(num);
+        leftMax.push(num);
+
+        rightMin.push(leftMax.top());
+        leftMax.pop();
+
+        if (leftMax.size() < rightMin.size()) {
+            leftMax.push(rightMin.top());
+            rightMin.pop();
+        }
     }
     
     double findMedian() {
-        int n = q.size();
-        auto temp = q;
-
-        bool odd = n & 0x1;
-
-        for (int i = 0; i < ((n - 1) / 2); i++) {
-            temp.pop();
-        }
-
-        if (odd) {
-            cout<<"odd: "<<temp.top()<<endl;
-            return temp.top(); 
+        if (leftMax.size() > rightMin.size()) {
+            return leftMax.top();
         } else {
-            double n1 = temp.top(); temp.pop();
-            double n2 = temp.top();
-            cout<<"even: "<<n1<<", "<<n2<<endl;
-            return (n1 + n2) / 2.0;
+            return (leftMax.top() + rightMin.top()) / 2.0;
         }
-        return -1;
-        
     }
 };
 
