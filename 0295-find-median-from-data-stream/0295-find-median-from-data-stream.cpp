@@ -1,5 +1,15 @@
 class MedianFinder {
 public:
+    // ================================
+    // Approach 1: Two Heaps
+    // - Time  Complexity: O(logN)
+    //   addNum: O(logN) Standard heap insertion and rebalancing
+    //   findMedian: O(1) Immediate access to the tops of the heaps
+    // - Space Complexity: O(N)
+    //   (All elements are stored in the two priority queues)
+    // - Pros: Finding the median is extremely efficient.
+    // - Cons: Requires more logic to maintain balance between two heaps.
+    // ================================
     priority_queue<int> leftMax;
     priority_queue<int, vector<int>, greater<int>> rightMin;
 
