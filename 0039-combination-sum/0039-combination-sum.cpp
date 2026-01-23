@@ -4,6 +4,7 @@ public:
         vector<vector<int>> ans;
         vector<int> path;
 
+        sort(candidates.begin(), candidates.end());
         backtrack(0, candidates, path, ans, target);
 
         return ans;
