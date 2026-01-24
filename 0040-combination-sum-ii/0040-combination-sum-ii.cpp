@@ -6,8 +6,6 @@ public:
         vector<int> path;
 
         backtrack(0, candidates, path, res, target);
-        sort(res.begin(), res.end());
-        res.erase(unique(res.begin(), res.end()), res.end());
 
         return res;
     }
