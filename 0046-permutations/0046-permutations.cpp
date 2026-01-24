@@ -19,13 +19,13 @@ public:
         // return res;
 
         // ================================
-        // Approach 2: 
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // Approach 2: Backtracking with In-place Swap
+        // - Time  Complexity: O(N * N!)
+        //   (Generating N! permutations, copying each takes O(N))
+        // - Space Complexity: O(N)
+        //   (Only the recursion stack, no extra 'used' or 'path' storage)
+        // - Pros: Memory efficient.
+        // - Cons: Modifies the original array during recursion.
         // ================================
         vector<vector<int>> res;
         
