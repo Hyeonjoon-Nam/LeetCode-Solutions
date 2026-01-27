@@ -4,18 +4,15 @@ public:
         // ================================
         // Approach 1: Backtrack with pass-by-value
         // - Time  Complexity: O(4^n * √n)
-        //   (The number of valid combinations is the nth Catalan number.)
+        //   (Specifically, it's the nth Catalan number, which counts valid parentheses pairs.)
         // - Space Complexity: O(n)
         //   (The maximum depth of the recursion tree is 2n)
-        // - Pros: No manual state restoration (backtracking) required.
-        // - Cons: Memory usage per call due to string copying.
+        // - Pros: Extremely clean and readable. Avoids manual state backtracking (un-choose).
+        // - Cons: Minor overhead due to string allocations during each recursive call.
         // ================================
-        int open = 0, close = 0;
-
-        string path = "";
         vector<string> res;
 
-        backtrack(open, close, n, path, res);
+        backtrack(0, 0, n, "", res);
 
         return res;
     }
