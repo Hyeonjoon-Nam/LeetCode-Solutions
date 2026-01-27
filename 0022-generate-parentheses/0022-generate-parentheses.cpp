@@ -2,13 +2,13 @@ class Solution {
 public:
     vector<string> generateParenthesis(int n) {
         // ================================
-        // Approach 1: Backtrack with placement constraints
-        // - Time  Complexity: O(4^n * n)
-        //   (nth Catalan number, representing the count of valid parentheses.)
+        // Approach 1: Backtrack with pass-by-value
+        // - Time  Complexity: O(4^n * √n)
+        //   (The number of valid combinations is the nth Catalan number.)
         // - Space Complexity: O(n)
         //   (The maximum depth of the recursion tree is 2n)
-        // - Pros: Only explores valid paths.
-        // - Cons: 
+        // - Pros: No manual state restoration (backtracking) required.
+        // - Cons: Memory usage per call due to string copying.
         // ================================
         int open = 0, close = 0;
 
