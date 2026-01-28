@@ -10,12 +10,12 @@ public:
     vector<string> letterCombinations(string digits) {
         // ================================
         // Approach 1: 
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // - Time  Complexity: O(4^N * N)
+        //   (N is the number of digits.)
+        // - Space Complexity: O(N)
+        //   (The recursion stack is equal to the length of digits N.)
+        // - Pros: Concise.
+        // - Cons: Recursive overhead.
         // ================================
         if (digits.empty()) return {};
 
@@ -27,7 +27,7 @@ public:
     }
 
     // For approach 1
-    void backtrack(int index, string& digits, string& path, vector<string>& res) {
+    void backtrack(int index, string digits, string path, vector<string>& res) {
         if (index == digits.length()) {
             res.push_back(path);
             return;
