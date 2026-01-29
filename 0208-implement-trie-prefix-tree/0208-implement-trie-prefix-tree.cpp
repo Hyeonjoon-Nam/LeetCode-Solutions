@@ -20,24 +20,29 @@ private:
 
 public:
     // ================================
-    // Approach 1: 
-    // - Time  Complexity: O()
-    //   ()
-    // - Space Complexity: O()
-    //   ()
-    // - Pros: 
-    // - Cons: 
+    // Approach 1: Hash Set
+    // - Time  Complexity:
+    //   - Insert: O(L) average
+    //   - Search: O(L) average
+    //   - StartWith: O(N * L) (Must sacn all stored words)
+    // - Space Complexity: O(N * L)
+    //   (N is the number of words, L is the length of word)
+    // - Pros: Simple, concise.
+    // - Cons: Inefficient for prefix matching. Uses extra memroy.
     // ================================
     
-    // ================================
-    // Approach 2: 
-    // - Time  Complexity: O()
-    //   ()
-    // - Space Complexity: O()
-    //   ()
-    // - Pros: 
-    // - Cons: 
-    // ================================
+    // ============================================================
+    // Approach 2: Trie (Prefix Tree)
+    // - Time Complexity:
+    //   - Insert: O(m) where m is the key length. Each step involves creating or examining a node.
+    //   - Search: O(m). We examine each character of the key to move down the tree.
+    //   - StartsWith: O(m). Similar to search, we follow the path of the prefix length m.
+    // - Space Complexity:
+    //   - Insert: O(m). In the worst case, we add m new nodes for a new key.
+    //   - Search/StartsWith: O(1). No extra space is required beyond the existing Trie.
+    // - Pros: Optimal for prefix-based queries, space efficient for keys sharing common prefixes compared to Hash Tables.
+    // - Cons: Higher memory overhead if keys have few common prefixes (due to pointer arrays).
+    // ============================================================
     Trie() {
         // Approach 1
         // s.clear();
