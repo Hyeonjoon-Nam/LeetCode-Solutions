@@ -21,10 +21,10 @@ public:
 
             int p = 0;
             while (p < prefix.length()) {
-                if (str[p] != prefix[p]) continue;
+                if (str[p] != prefix[p]) break;
                 p++;
             }
-            return true;
+            if (p == prefix.length()) return true;
         }
         return false;
     }
