@@ -15,6 +15,17 @@ private:
     TrieNode* root;
 
 public:
+// ============================================================
+    // Approach 1: Trie with DFS Backtracking
+    // - Time Complexity:
+    //   - addWord: O(M) where M is the word length.
+    //   - search: O(M) for regular words; up to O(N * 26^M) for wildcards ".".
+    // - Space Complexity:
+    //   - Trie Storage: O(T) where T is total characters stored.
+    //   - Search Stack: O(M) for the recursion depth.
+    // - Pros: Fast word insertion and efficient wildcard pruning.
+    // - Cons: Wildcard "." search can be expensive in dense Tries.
+    // ============================================================
     WordDictionary() {
         root = new TrieNode();
     }
