@@ -13,7 +13,7 @@ struct TrieNode {
 class Trie {
 private:
     // Approach 1
-    unordered_set<string> s;
+    //unordered_set<string> s;
 
     // Approach 2
     TrieNode* root;
