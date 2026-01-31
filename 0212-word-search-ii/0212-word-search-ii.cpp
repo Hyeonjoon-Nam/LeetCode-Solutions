@@ -14,13 +14,13 @@ class Solution {
 public:
     vector<string> findWords(vector<vector<char>>& board, vector<string>& words) {
         // ============================================================
-        // Approach 1: Backtracking with Trie (Multi-word Search)
-        // - Time Complexity: $O(M \cdot N \cdot 4^L)$ 
-        //   (M*N: board size, L: max word length. Pruning via Trie makes it much faster.)
-        // - Space Complexity: $O(W \cdot L)$ 
-        //   (W: number of words, L: max length. This is for storing the Trie.)
-        // - Pros: Finds multiple words simultaneously; extremely efficient pruning.
-        // - Cons: High memory usage for the Trie structure.
+        // Approach 1: Backtracking with Trie
+        // - Time Complexity: O(M * 4 * 3^(L-1))
+        //   (M: total board cells, L: max word length)
+        // - Space Complexity: O(N)
+        //   (N: total number of characters in the word list)
+        // - Pros: Simultaneous multi-word search with prefix pruning.
+        // - Cons: High memory overhead due to Trie node allocations.
         // ============================================================
         TrieNode* root = buildTrie(words);
         vector<string> res;
