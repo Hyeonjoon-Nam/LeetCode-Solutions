@@ -2,13 +2,13 @@ class Solution {
 public:
     int numIslands(vector<vector<char>>& grid) {
         // ================================
-        // Approach 1: 
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // Approach 1: DFS
+        // - Time  Complexity: O(M * N)
+        //   (M: rows, N: cols. Each cell is visited at most once.)
+        // - Space Complexity: O(M * N)
+        //   (Worst case recursion depth if the entire grid is one island.)
+        // - Pros: Simple, no extra space for a 'visited' array.
+        // - Cons: Modifies the input grid, can cause stack overflow.
         // ================================
         int count = 0;
 
