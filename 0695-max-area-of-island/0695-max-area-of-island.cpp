@@ -4,9 +4,9 @@ public:
         // ================================
         // Approach 1: DFS
         // - Time  Complexity: O(R * C)
-        //   (R is the row, C is the column)
+        //   (R is the row, C is the column. Visits each node once.)
         // - Space Complexity: O(R * C)
-        //   (Recursion overhead)
+        //   (Worst case recursion depth.)
         // - Pros: Simple.
         // - Cons: May cause recursion stack overflow.
         // ================================
