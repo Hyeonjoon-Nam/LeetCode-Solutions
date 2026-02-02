@@ -2,13 +2,13 @@ class Solution {
 public:
     int orangesRotting(vector<vector<int>>& grid) {
         // ================================
-        // Approach 1: 
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // Approach 1: BFS
+        // - Time  Complexity: O(M * N)
+        //   (Visits each cell once)
+        // - Space Complexity: O(M * N)
+        //   (In the worst case, the queue can hold all cells.)
+        // - Pros: Concise, optimal.
+        // - Cons: Requires extra space for the queue.
         // ================================
         if (grid.empty()) return -1;
         int minute = 0;
@@ -48,8 +48,7 @@ public:
             }
             minute++;
         }
-        --minute;
 
-        return fresh == 0 ? minute : -1;
+        return fresh == 0 ? max(minute - 1, 0) : -1;
     }
 };
