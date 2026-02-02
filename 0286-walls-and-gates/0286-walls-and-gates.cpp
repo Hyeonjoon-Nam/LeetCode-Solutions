@@ -8,7 +8,7 @@ public:
         // Approach 1: BFS
         // - Time  Complexity: O(M * N)
         //   (Every cell is visited once.)
-        // - Space Complexity: O(M * N)
+        // - Space Complexity: O(M * N) 
         //   (In the worst case, the queue can hold all cells.)
         // - Pros: Guarantees the shortest distance upon the first visit.
         // - Cons: Requires O(M*N) extra space for the queue.
