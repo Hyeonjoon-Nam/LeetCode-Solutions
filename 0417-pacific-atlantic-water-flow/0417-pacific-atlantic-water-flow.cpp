@@ -1,6 +1,15 @@
 class Solution {
 public:
     vector<vector<int>> pacificAtlantic(vector<vector<int>>& heights) {
+        // ================================
+        // Approach 1: BFS
+        // - Time  Complexity: O(M * N)
+        //   (Visits each noce at most once.)
+        // - Space Complexity: O(M * N)
+        //   (M * N size of space required for pQ, aQ, pVisited, aVisited, res)
+        // - Pros: Optimal.
+        // - Cons: Requires extra space.
+        // ================================
         vector<vector<int>> res;
 
         int m = heights.size();
@@ -15,39 +24,41 @@ public:
         vector<vector<bool>> aVisited(m, vector<bool>(n, false));
 
         for (int i = 0; i < m; i++) {
-            pQ.push({i, 0});
-            aQ.push({i, n - 1});
+            pQ.push({i, 0}); pVisited[i][0] = true;
+            aQ.push({i, n - 1}); aVisited[i][n-1] = true;
         }
         for (int i = 0; i < n; i++) {
-            pQ.push({0, i});
-            aQ.push({m - 1, i});
+            pQ.push({0, i}); pVisited[0][i] = true;
+            aQ.push({m - 1, i}); aVisited[m-1][i] = true;
         }
 
         while(!pQ.empty()) {
             auto[r, c] = pQ.front(); pQ.pop();
-            if (pVisited[r][c] == true) continue;
-            else pVisited[r][c] = true;
 
             for (auto[dr, dc] : directions) {
                 int nr = r + dr, nc = c + dc;
 
                 if (nr < 0 || nr >= m || nc < 0 || nc >= n || pVisited[nr][nc]) continue;
 
-                if (heights[r][c] <= heights[nr][nc]) pQ.push({nr, nc});
+                if (heights[r][c] <= heights[nr][nc]) {
+                    pVisited[nr][nc] = true;
+                    pQ.push({nr, nc});
+                }
             }
         }
 
         while(!aQ.empty()) {
             auto[r, c] = aQ.front(); aQ.pop();
-            if (aVisited[r][c] == true) continue;
-            else aVisited[r][c] = true;
 
             for (auto[dr, dc] : directions) {
                 int nr = r + dr, nc = c + dc;
 
                 if (nr < 0 || nr >= m || nc < 0 || nc >= n || aVisited[nr][nc]) continue;
 
-                if (heights[r][c] <= heights[nr][nc]) aQ.push({nr, nc});
+                if (heights[r][c] <= heights[nr][nc]) {
+                    aVisited[nr][nc] = true;
+                    aQ.push({nr, nc});
+                }
             }
         }
 
