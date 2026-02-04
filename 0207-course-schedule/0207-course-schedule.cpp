@@ -2,7 +2,7 @@ class Solution {
 public:
     bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {
         // ================================
-        // Approach 1: DFS
+        // Approach 1: DFS 
         // - Time  Complexity: O(V + E)
         //   (V is numCourses, E is prerequisites.size(). Each node and edge is visited once.)
         // - Space Complexity: O(V + E)
