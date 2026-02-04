@@ -2,13 +2,13 @@ class Solution {
 public:
     vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites) {
         // ================================
-        // Approach 1: 
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // Approach 1: DFS
+        // - Time  Complexity: O(V + E)
+        //   (V is numCourses, E is prerequisites.size(). Each node and edge is visited once.)
+        // - Space Complexity: O(V + E)
+        //   (Adjacency list O(V+E), state/result arrays and recursion stack O(V))
+        // - Pros: Optimal.
+        // - Cons: Recursive overhead, requires reversing the post-order result.
         // ================================
         vector<vector<int>> adj(numCourses);
         for (auto& pre : prerequisites) {
