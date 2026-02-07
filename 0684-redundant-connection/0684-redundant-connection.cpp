@@ -2,7 +2,7 @@ class Solution {
 public:
     vector<int> findRedundantConnection(vector<vector<int>>& edges) {
         // ================================
-        // Approach 1: DFS
+        // Approach 1: DFS 
         // - Time  Complexity: O(N²)
         //   (N is the number of edges. For each edge, we may perform a DFS traverse of the graph)
         // - Space Complexity: O(N)
