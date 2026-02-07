@@ -2,13 +2,13 @@ class Solution {
 public:
     vector<int> findRedundantConnection(vector<vector<int>>& edges) {
         // ================================
-        // Approach 1: 
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // Approach 1: DFS
+        // - Time  Complexity: O(N²)
+        //   (N is the number of edges. For each edge, we may perform a DFS traverse of the graph)
+        // - Space Complexity: O(N)
+        //   (Adjacency list and recursion stack depth in the worst case.)
+        // - Pros: Intuitive pathfinding
+        // - Cons: Inefficient for large graphs due to redundant path searches.
         // ================================
         // int n = edges.size();
         // vector<vector<int>> adj(n + 1);
@@ -27,12 +27,12 @@ public:
         // return {};
 
         // ================================
-        // Approach 2: 
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
+        // Approach 2: Union-Find
+        // - Time  Complexity: O(N )
+        //   (N is the number of nodes and edges in the given graph.)
+        // - Space Complexity: O(N)
+        //   (Parent array to store the representative of each set.)
+        // - Pros: Optimal.
         // - Cons: 
         // ================================
         int n = edges.size();
