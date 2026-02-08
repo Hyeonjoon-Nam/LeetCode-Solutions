@@ -7,8 +7,8 @@ public:
         //   (N is the number of nodes, E is the number of total edges in the given network.)
         // - Space Complexity: O(N + E)
         //   (Adjacency list and distance array.)
-        // - Pros: 
-        // - Cons: 
+        // - Pros: Optimal.
+        // - Cons: Cannot handle negative edge weights.
         // ================================
         vector<vector<pair<int, int>>> adj(n + 1);
         for (auto& t : times) {
