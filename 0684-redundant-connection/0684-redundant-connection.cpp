@@ -10,21 +10,21 @@ public:
         // - Pros: Intuitive pathfinding
         // - Cons: Inefficient for large graphs due to redundant path searches.
         // ================================
-        int n = edges.size();
-        vector<vector<int>> adj(n + 1);
+        // int n = edges.size();
+        // vector<vector<int>> adj(n + 1);
 
-        for (auto& edge : edges) {
-            int u = edge[0], v = edge[1];
-            vector<bool> visited(n + 1, false);
+        // for (auto& edge : edges) {
+        //     int u = edge[0], v = edge[1];
+        //     vector<bool> visited(n + 1, false);
 
-            if (dfs(u, v, adj, visited)) {
-                return edge;
-            }
+        //     if (dfs(u, v, adj, visited)) {
+        //         return edge;
+        //     }
 
-            adj[u].push_back(v);
-            adj[v].push_back(u);
-        }
-        return {};
+        //     adj[u].push_back(v);
+        //     adj[v].push_back(u);
+        // }
+        // return {};
 
         // ================================
         // Approach 2: Union-Find
@@ -35,20 +35,20 @@ public:
         // - Pros: Optimal.
         // - Cons: 
         // ================================
-        // int n = edges.size();
-        // parent.resize(n + 1);
-        // for (int i = 1; i <= n; i++) parent[i] = i;
+        int n = edges.size();
+        parent.resize(n + 1);
+        for (int i = 1; i <= n; i++) parent[i] = i;
 
-        // for (auto& edge : edges) {
-        //     int rootU = find(edge[0]);
-        //     int rootV = find(edge[1]);
+        for (auto& edge : edges) {
+            int rootU = find(edge[0]);
+            int rootV = find(edge[1]);
 
-        //     if (rootU == rootV) {
-        //         return edge;
-        //     }
-        //     parent[rootU] = rootV;
-        // }
-        // return {};
+            if (rootU == rootV) {
+                return edge;
+            }
+            parent[rootU] = rootV;
+        }
+        return {};
     }
 
 
