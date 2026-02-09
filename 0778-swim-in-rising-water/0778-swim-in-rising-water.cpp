@@ -1,6 +1,15 @@
 class Solution {
 public:
     int swimInWater(vector<vector<int>>& grid) {
+        // ================================
+        // Approach 1: Dijkstra-like BFS
+        // - Time  Complexity: O(N² log N)
+        //   (N² nodes are processed, and each PQ operation takes log N.)
+        // - Space Complexity: O(N²)
+        //   (Used for the visited grid and priority queue.)
+        // - Pros: Efficiently finds the path.
+        // - Cons: Requires additional memory for the visited array.
+        // ================================
         if (grid.empty()) return 0;
         
         int n = grid.size();
