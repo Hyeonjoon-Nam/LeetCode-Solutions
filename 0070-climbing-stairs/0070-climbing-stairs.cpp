@@ -1,22 +1,26 @@
 class Solution {
 public:
     int climbStairs(int n) {
-        if (n < 1) return 0;
-        if (n == 1) return 1;
-        if (n == 2) return 2;
-        v.reserve(n+1);
-        v[0] = 1;
-        v[1] = 2;
-        for (int i = 2; i < n; i++) {
-            v[i] = v[i - 1] + v[i - 2];
+        // ================================
+        // Approach 1: Dynamic Programming
+        // - Time  Complexity: O(n)
+        //   (Iterate from 3 to n once.)
+        // - Space Complexity: O(1)
+        //   (Constant space used.)
+        // - Pros: Space efficient.
+        // - Cons: Does not store previous values.
+        // ================================
+        if (n <= 2) return n;
+
+        int first = 1;
+        int second = 2;
+        int current = 0;
+
+        for (int i = 3; i <= n; i++) {
+            current = first + second;
+            first = second;
+            second = current;
         }
-
-        return v[n-1];
+        return second;
     }
-
-public:
-    vector<int> v;
 };
-
-
-// 1, 2, 3, 5, 8
