@@ -2,13 +2,13 @@ class Solution {
 public:
     string longestPalindrome(string s) {
         // ================================
-        // Approach 1: 
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // Approach 1: Expand from centers
+        // - Time  Complexity: O(N²)
+        //   (Each of the N characters is treated as a potential center, expanding up to N times.)
+        // - Space Complexity: O(1)
+        //   (Only constant space used.)
+        // - Pros: Space efficient.
+        // - Cons: Not optimal (Time complexity O(N²))
         // ================================
         if (s.length() <= 1) return s;
 
