@@ -30,6 +30,7 @@ public:
         return s.substr(start, maxLen);
     }
 
+    // For approach 1
     int Palindrome(const string& s, int left, int right) {
         while (left >= 0 && right < s.length() && s[left] == s[right]) {
             left--;
