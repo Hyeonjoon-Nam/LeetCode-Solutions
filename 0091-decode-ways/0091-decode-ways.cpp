@@ -2,13 +2,13 @@ class Solution {
 public:
     int numDecodings(string s) {
         // ================================
-        // Approach 1: 
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // Approach 1: Dynamic Programming (Lineary Array)
+        // - Time  Complexity: O(N)
+        //   (Single pass through the string to fill the dp table.)
+        // - Space Complexity: O(N)
+        //   (Stores decoding counts for each prefix of the string.)
+        // - Pros: Intuitive.
+        // - Cons: Uses extra memory.
         // ================================
         // if (s.empty() || s[0] == '0') return 0;
 
@@ -33,12 +33,12 @@ public:
 
 
         // ================================
-        // Approach 2: 
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
+        // Approach 2: Dynamic Programming (Space Optimized)
+        // - Time  Complexity: O(N)
+        //   (Single pass through the string.)
+        // - Space Complexity: O(1)
+        //   (Only uses a fixed number of variables.)
+        // - Pros: Space efficient.
         // - Cons: 
         // ================================
         if (s.empty() || s[0] == '0') return 0;
