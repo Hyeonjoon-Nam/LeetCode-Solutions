@@ -32,13 +32,13 @@ public:
         // return ans;
         
         // ================================
-        // Approach 2: 
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // Approach 2: Binary Search
+        // - Time  Complexity: O(N log N)
+        //   (We iterate through N elements, and for each, we perform binary search.)
+        // - Space Complexity: O(N)
+        //   (In the worst case, the tails array can grwo to size N.)
+        // - Pros: Efficient, faster than DP appraoch.
+        // - Cons: Does not directly store the LIS itself.
         // ================================
         if (nums.empty()) return 0;
 
