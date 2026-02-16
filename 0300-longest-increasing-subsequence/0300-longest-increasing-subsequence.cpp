@@ -10,26 +10,26 @@ public:
         // - Pros: Intuitive.
         // - Cons: Doesn't meet the follow up requirement time complexity O(n log(n))
         // ================================
-        int n = nums.size();
-        vector<int> dp(n, 1);
+        // int n = nums.size();
+        // vector<int> dp(n, 1);
 
-        for (int i = 1; i < n; ++i)
-        {
-            for (int j = 0; j < i; ++j)
-            {
-                if (nums[i] > nums[j])
-                {
-                    dp[i] =  max(dp[i], dp[j] + 1);
-                }
-            }
-        }
+        // for (int i = 1; i < n; ++i)
+        // {
+        //     for (int j = 0; j < i; ++j)
+        //     {
+        //         if (nums[i] > nums[j])
+        //         {
+        //             dp[i] =  max(dp[i], dp[j] + 1);
+        //         }
+        //     }
+        // }
 
-        int ans = 0;
-        for (int x : dp)
-        {
-            ans = max(ans, x);
-        }
-        return ans;
+        // int ans = 0;
+        // for (int x : dp)
+        // {
+        //     ans = max(ans, x);
+        // }
+        // return ans;
         
         // ================================
         // Approach 2: 
@@ -40,21 +40,21 @@ public:
         // - Pros: 
         // - Cons: 
         // ================================
-        // if (nums.empty()) return 0;
+        if (nums.empty()) return 0;
 
-        // vector<int> tails;
+        vector<int> tails;
 
-        // for (int x : nums) {
-        //     auto it = lower_bound(tails.begin(), tails.end(), x);
+        for (int x : nums) {
+            auto it = lower_bound(tails.begin(), tails.end(), x);
 
-        //     if (it == tails.end()) {
-        //         tails.push_back(x);
-        //     }
-        //     else {
-        //         *it = x;
-        //     }
-        // }
-        // return tails.size();
+            if (it == tails.end()) {
+                tails.push_back(x);
+            }
+            else {
+                *it = x;
+            }
+        }
+        return tails.size();
     }
 
 };
