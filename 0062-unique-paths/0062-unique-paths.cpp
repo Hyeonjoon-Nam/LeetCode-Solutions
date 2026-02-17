@@ -3,12 +3,12 @@ public:
     int uniquePaths(int m, int n) {
         // ================================
         // Approach 1: Dynamic Programming (2D Array)
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // - Time  Complexity: O(m * n)
+        //   (Iterates through each cell in the grid once.)
+        // - Space Complexity: O(m * n)
+        //   (Stores path counts for the entire grid.)
+        // - Pros: Intuitive, mirrors the problem's 2D structure.
+        // - Cons: Suboptimal memory usage for large grids.
         // ================================
         // vector<vector<int>> dp(m, vector<int>(n, 1));
 
@@ -21,12 +21,12 @@ public:
 
         // ================================
         // Approach 2: Dynamic Programming (Optimized 1D Array)
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // - Time  Complexity: O(m * n)
+        //   (Still processes every cell once.)
+        // - Space Complexity: O(n)
+        //   (Reduces memory to a single row)
+        // - Pros: Significantly better space efficiency, better cache locality.
+        // - Cons: Less intuitive.
         // ================================
         vector<int> dp(n, 1);
 
@@ -36,15 +36,5 @@ public:
             }
         }
         return dp[n - 1];
-
-        // ================================
-        // Approach 1: 
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
-        // ================================
     }
 };
