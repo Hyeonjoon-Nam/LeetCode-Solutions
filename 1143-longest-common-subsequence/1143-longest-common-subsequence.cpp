@@ -3,12 +3,12 @@ public:
     int longestCommonSubsequence(string text1, string text2) {
         // ================================
         // Approach 1: Dynamic Programming (2D Array)
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // - Time  Complexity: O(M * N)
+        //   (M, N are lengths of text1 and text2.)
+        // - Space Complexity: O(M * N)
+        //   (Stores the LCS length for every prefix combinations.)
+        // - Pros: Intuitive.
+        // - Cons: Not optimal space efficient.
         // ================================
         // int m = text1.length();
         // int n = text2.length();
@@ -30,12 +30,12 @@ public:
 
         // ================================
         // Approach 2: Dynamic Programming (Optimized 1D Array)
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // - Time  Complexity: O(M * N)
+        //   (Still requires filling the logical grid.)
+        // - Space Complexity: O(N)
+        //   (Uses only one row.)
+        // - Pros: Highly memory efficient.
+        // - Cons:  
         // ================================
         int m = text1.length();
         int n = text2.length();
