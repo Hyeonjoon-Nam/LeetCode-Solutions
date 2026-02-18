@@ -10,7 +10,7 @@ public:
         // - Pros: 
         // - Cons: 
         // ================================
-        vector<long long> dp(amount + 1, 0);
+        vector<unsigned int> dp(amount + 1, 0);
         dp[0] = 1;
 
         for (int coin : coins) {
