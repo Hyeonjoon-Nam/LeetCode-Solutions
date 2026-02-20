@@ -6,7 +6,7 @@ public:
         // - Time  Complexity: O(m * n)
         //   (m: s1.length, n: s2.length. We fill a logical m*n grid.)
         // - Space Complexity: O(n)
-        //   (For a dp array sized (n-1).)
+        //   (For a dp array sized (n+1).)
         // - Pros: Optimal time & space efficiency.
         // - Cons: Less intuitive than 2D way.
         // ================================
@@ -27,8 +27,8 @@ public:
                     dp[j] = dp[j] && (s1[i - 1] == s3[i + j - 1]);
                 }
                 else {
-                    dp[j] = (dp[j] && s1[i - 1] == s3[i + j - 1] || 
-                             dp[j - 1] && s2[j - 1] == s3[i + j - 1]);
+                    dp[j] = (dp[j] && s1[i - 1] == s3[i + j - 1]) || 
+                            (dp[j - 1] && s2[j - 1] == s3[i + j - 1]);
                 }
             }
         }
