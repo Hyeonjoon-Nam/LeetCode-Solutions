@@ -8,7 +8,7 @@ public:
         // - Space Complexity: O(M + N)
         //   (The result can be at most M+N digits.)
         // - Pros:  
-        // - Cons: 
+        // - Cons:  
         // ================================
         if (num1 == "0" || num2 == "0") return "0";
 
