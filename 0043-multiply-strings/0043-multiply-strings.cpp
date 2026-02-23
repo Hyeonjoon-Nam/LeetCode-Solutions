@@ -7,7 +7,7 @@ public:
         //   (M = num1.length(), N = num2.length(). We perform a nested loop for each digit.)
         // - Space Complexity: O(M + N)
         //   (The result can be at most M+N digits.)
-        // - Pros: 
+        // - Pros:  
         // - Cons: 
         // ================================
         if (num1 == "0" || num2 == "0") return "0";
