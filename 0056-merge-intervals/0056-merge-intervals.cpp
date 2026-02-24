@@ -2,13 +2,13 @@ class Solution {
 public:
     vector<vector<int>> merge(vector<vector<int>>& intervals) {
         // ================================
-        // Approach 1: 
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // Approach 1: Sort and reallocate
+        // - Time  Complexity: O(N log N)
+        //   (Sorting takes O(N log N), iterating takes O(N))
+        // - Space Complexity: O(log N) or O(N)
+        //   (Auxiliary space for sorting, excluding the output vector.)
+        // - Pros: Intuitive.
+        // - Cons: Not optimal space complexity.
         // ================================
         // sort(intervals.begin(), intervals.end(), [](auto& a, auto& b) {
         //     return a[0] < b[0];
@@ -35,13 +35,13 @@ public:
         // return res;
 
         // ================================
-        // Approach 1: 
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // Approach 1: Sorting and In-place modification
+        // - Time  Complexity: O(N log N)
+        //   (Sorting takes O(N log N))
+        // - Space Complexity: O(log N) or O(N)
+        //   (Auxiliary space for sorting, excluding the output vector.)
+        // - Pros: Optimal memory usage.
+        // - Cons: Modifies the output array in place.
         // ================================
         sort(intervals.begin(), intervals.end(), [](auto& a, auto& b) {
             return a[0] < b[0];
