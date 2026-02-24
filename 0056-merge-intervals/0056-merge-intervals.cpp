@@ -52,8 +52,7 @@ public:
         for (vector<int>& v : intervals) {
             if (!res.empty()) {
                 if (res.back()[1] >= v[0]) {
-                    int end = max(res.back()[1], v[1]);
-                    res.back()[1] = end;
+                    res.back()[1] = max(res.back()[1], v[1]);
                 }
                 else
                     res.push_back(v);
