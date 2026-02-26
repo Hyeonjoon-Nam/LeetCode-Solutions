@@ -8,7 +8,7 @@ public:
         // - Space Complexity: O(log N)
         //   (Sorting takes O(log N))
         // - Pros: Optimal.
-        // - Cons:  
+        // - Cons: 
         // ================================
         if (intervals.empty()) return 0;
         sort(intervals.begin(), intervals.end());
