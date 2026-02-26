@@ -8,7 +8,7 @@ public:
         // - Space Complexity: O(log N) or O(N)
         //   (C++ quick sort takes O(log N) on average, but the worst case, O(N))
         // - Pros: Simple, optimal.
-        // - Cons: Modifies the original intervals array.
+        // - Cons: Modifies the original intervals array. 
         // ================================
         if (intervals.size() < 2) return true;
         sort(intervals.begin(), intervals.end());
