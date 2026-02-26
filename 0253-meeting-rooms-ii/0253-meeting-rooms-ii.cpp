@@ -8,7 +8,7 @@ public:
         // - Space Complexity: O(N)
         //   (In the worst case, priority queue can be sized N)
         // - Pros: Intuitive, optimal.
-        // - Cons: 
+        // - Cons:  
         // ================================
         int n = intervals.size();
         if (n <= 1) return n;
