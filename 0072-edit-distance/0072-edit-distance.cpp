@@ -7,7 +7,7 @@ public:
         //   (We iterate through every cell in the (M+1) * (N+1) matrix once.)
         // - Space Complexity: O(M * N)
         //   (Allocates a 2D vector to store all intermediate states.)
-        // - Pros: Intuitive.
+        // - Pros: Intuitive, optimal.
         // - Cons: 
         // ================================
         int m = word1.length(), n = word2.length();
