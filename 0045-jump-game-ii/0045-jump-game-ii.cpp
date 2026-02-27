@@ -1,6 +1,15 @@
 class Solution {
 public:
     int jump(vector<int>& nums) {
+        // ================================
+        // Approach 1: Greedy
+        // - Time  Complexity: O(N)
+        //   (A single linear pass through the array.)
+        // - Space Complexity: O(1)
+        //   (Constant space used.)
+        // - Pros: Optimal.
+        // - Cons: 
+        // ================================
         int current_end = 0, max_reach = 0;
         int jump_count = 0;
         int n = nums.size();
