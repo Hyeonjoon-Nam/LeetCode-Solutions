@@ -13,7 +13,6 @@ public:
 
             while (count[num] > 0) {
                 for (int i = 0; i < groupSize; ++i) {
-                    cout<<num+i<<endl;
                     if (count[num + i] <= 0) return false;
                     else --count[num + i];
                 }
