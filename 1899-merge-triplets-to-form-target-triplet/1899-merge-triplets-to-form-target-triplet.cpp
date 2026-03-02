@@ -1,6 +1,15 @@
 class Solution {
 public:
     bool mergeTriplets(vector<vector<int>>& triplets, vector<int>& target) {
+        // ================================
+        // Approach 1: Greedy
+        // - Time  Complexity: O(N)
+        //   (A single linear pass through the triplets array)
+        // - Space Complexity: O(1)
+        //   (Constant space used.)
+        // - Pros: Optimal time and space.
+        // - Cons: 
+        // ================================
         int max_x = 0, max_y = 0, max_z = 0;
 
         for (const vector<int>& v : triplets) {
