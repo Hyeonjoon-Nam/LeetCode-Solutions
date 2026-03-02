@@ -25,3 +25,15 @@ Solutions are automatically synced via [LeetHub](https://github.com/QasimWani/Le
 
 ---
 *Created by [Hyeonjoon Nam](https://github.com/Hyeonjoon-Nam)*
+
+<!---LeetCode Topics Start-->
+# LeetCode Topics
+## Array
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1899-merge-triplets-to-form-target-triplet](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/1899-merge-triplets-to-form-target-triplet/) | Medium |
+## Greedy
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1899-merge-triplets-to-form-target-triplet](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/1899-merge-triplets-to-form-target-triplet/) | Medium |
+<!---LeetCode Topics End-->
