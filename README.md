@@ -32,6 +32,7 @@ Solutions are automatically synced via [LeetHub](https://github.com/QasimWani/Le
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0136-single-number](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/0136-single-number/) | Easy |
+| [0268-missing-number](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/0268-missing-number/) | Easy |
 | [1899-merge-triplets-to-form-target-triplet](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/1899-merge-triplets-to-form-target-triplet/) | Medium |
 ## Greedy
 | Problem Name | Difficulty |
@@ -41,6 +42,7 @@ Solutions are automatically synced via [LeetHub](https://github.com/QasimWani/Le
 ## Hash Table
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0268-missing-number](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/0268-missing-number/) | Easy |
 | [0763-partition-labels](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/0763-partition-labels/) | Medium |
 ## Two Pointers
 | Problem Name | Difficulty |
@@ -56,6 +58,7 @@ Solutions are automatically synced via [LeetHub](https://github.com/QasimWani/Le
 | [0136-single-number](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/0136-single-number/) | Easy |
 | [0190-reverse-bits](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/0190-reverse-bits/) | Easy |
 | [0191-number-of-1-bits](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/0191-number-of-1-bits/) | Easy |
+| [0268-missing-number](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/0268-missing-number/) | Easy |
 | [0338-counting-bits](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/0338-counting-bits/) | Easy |
 ## Divide and Conquer
 | Problem Name | Difficulty |
@@ -66,4 +69,16 @@ Solutions are automatically synced via [LeetHub](https://github.com/QasimWani/Le
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0338-counting-bits](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/0338-counting-bits/) | Easy |
+## Math
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0268-missing-number](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/0268-missing-number/) | Easy |
+## Binary Search
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0268-missing-number](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/0268-missing-number/) | Easy |
+## Sorting
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0268-missing-number](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/0268-missing-number/) | Easy |
 <!---LeetCode Topics End-->
