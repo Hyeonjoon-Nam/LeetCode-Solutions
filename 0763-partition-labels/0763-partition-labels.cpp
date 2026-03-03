@@ -1,6 +1,15 @@
 class Solution {
 public:
     vector<int> partitionLabels(string s) {
+        // ================================
+        // Approach 1: Greedy
+        // - Time  Complexity: O(N)
+        //   (Two linear passes through the string, finding last_idx takes O(1))
+        // - Space Complexity: O(1)
+        //   (Constant space used.)
+        // - Pros: Optimal.
+        // - Cons: 
+        // ================================
         int last_idx[26] = {0};
 
         for (int i = 0; i < s.length(); ++i) {
