@@ -31,6 +31,7 @@ Solutions are automatically synced via [LeetHub](https://github.com/QasimWani/Le
 ## Array
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0136-single-number](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/0136-single-number/) | Easy |
 | [1899-merge-triplets-to-form-target-triplet](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/1899-merge-triplets-to-form-target-triplet/) | Medium |
 ## Greedy
 | Problem Name | Difficulty |
@@ -49,4 +50,8 @@ Solutions are automatically synced via [LeetHub](https://github.com/QasimWani/Le
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0763-partition-labels](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/0763-partition-labels/) | Medium |
+## Bit Manipulation
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0136-single-number](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/0136-single-number/) | Easy |
 <!---LeetCode Topics End-->
