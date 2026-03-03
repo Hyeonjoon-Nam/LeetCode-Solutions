@@ -7,7 +7,7 @@ public:
         //   (log base 10 of x.)
         // - Space Complexity: O(1)
         //   (Constant space used.)
-        // - Pros: Optimal.
+        // - Pros: Optimal. 
         // - Cons: 
         // ================================
         int res = 0;
