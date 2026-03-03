@@ -73,6 +73,7 @@ Solutions are automatically synced via [LeetHub](https://github.com/QasimWani/Le
 ## Math
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0007-reverse-integer](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/0007-reverse-integer/) | Medium |
 | [0268-missing-number](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/0268-missing-number/) | Easy |
 | [0371-sum-of-two-integers](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/0371-sum-of-two-integers/) | Medium |
 ## Binary Search
