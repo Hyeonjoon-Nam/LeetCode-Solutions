@@ -10,18 +10,18 @@ public:
         // - Pros: 
         // - Cons: 
         // ================================
-        int current_sum = 0;
-        int n = nums.size();
+        // int current_sum = 0;
+        // int n = nums.size();
 
-        for (int x : nums) {
-            current_sum += x;
-        }
+        // for (int x : nums) {
+        //     current_sum += x;
+        // }
         
-        int correct_sum = (n + 1) * n / 2;
-        return correct_sum - current_sum;
+        // int correct_sum = (n + 1) * n / 2;
+        // return correct_sum - current_sum;
 
         // ================================
-        // Approach 1: 
+        // Approach 2: Bit Manipulation
         // - Time  Complexity: O()
         //   ()
         // - Space Complexity: O()
@@ -29,6 +29,14 @@ public:
         // - Pros: 
         // - Cons: 
         // ================================
-        
+        int n = nums.size(); 
+        int res = 0;
+        for (int x = 0; x <= n; ++x) {
+            res ^= x;
+        }
+        for (int x : nums) {
+            res ^= x;
+        }
+        return res;
     }
 };
