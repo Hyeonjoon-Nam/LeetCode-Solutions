@@ -35,5 +35,18 @@ Solutions are automatically synced via [LeetHub](https://github.com/QasimWani/Le
 ## Greedy
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0763-partition-labels](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/0763-partition-labels/) | Medium |
 | [1899-merge-triplets-to-form-target-triplet](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/1899-merge-triplets-to-form-target-triplet/) | Medium |
+## Hash Table
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0763-partition-labels](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/0763-partition-labels/) | Medium |
+## Two Pointers
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0763-partition-labels](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/0763-partition-labels/) | Medium |
+## String
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0763-partition-labels](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/0763-partition-labels/) | Medium |
 <!---LeetCode Topics End-->
