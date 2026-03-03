@@ -2,13 +2,13 @@ class Solution {
 public:
     int missingNumber(vector<int>& nums) {
         // ================================
-        // Approach 1: 
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // Approach 1: Math
+        // - Time  Complexity: O(N)
+        //   (A single pass through nums.)
+        // - Space Complexity: O(1)
+        //   (Constant space used.)
+        // - Pros: Intuitive.
+        // - Cons: Potential integer overflow.
         // ================================
         // int current_sum = 0;
         // int n = nums.size();
@@ -22,21 +22,21 @@ public:
 
         // ================================
         // Approach 2: Bit Manipulation
-        // - Time  Complexity: O()
-        //   ()
-        // - Space Complexity: O()
-        //   ()
-        // - Pros: 
-        // - Cons: 
+        // - Time  Complexity: O(N)
+        //   (A single linear pass through nums.)
+        // - Space Complexity: O(1)
+        //   (Constant space used.)
+        // - Pros: Optimal.
+        // - Cons: Less intuitive.
         // ================================
         int n = nums.size(); 
-        int res = 0;
-        for (int x = 0; x <= n; ++x) {
-            res ^= x;
+        int res = n;
+
+        for (int i = 0; i < n; ++i) {
+            res ^= i;
+            res ^= nums[i];
         }
-        for (int x : nums) {
-            res ^= x;
-        }
+        
         return res;
     }
 };
