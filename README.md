@@ -37,6 +37,7 @@ Solutions are automatically synced via [LeetHub](https://github.com/QasimWani/Le
 ## Greedy
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0678-valid-parenthesis-string](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/0678-valid-parenthesis-string/) | Medium |
 | [0763-partition-labels](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/0763-partition-labels/) | Medium |
 | [1899-merge-triplets-to-form-target-triplet](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/1899-merge-triplets-to-form-target-triplet/) | Medium |
 ## Hash Table
@@ -51,6 +52,7 @@ Solutions are automatically synced via [LeetHub](https://github.com/QasimWani/Le
 ## String
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0678-valid-parenthesis-string](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/0678-valid-parenthesis-string/) | Medium |
 | [0763-partition-labels](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/0763-partition-labels/) | Medium |
 ## Bit Manipulation
 | Problem Name | Difficulty |
@@ -70,6 +72,7 @@ Solutions are automatically synced via [LeetHub](https://github.com/QasimWani/Le
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0338-counting-bits](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/0338-counting-bits/) | Easy |
+| [0678-valid-parenthesis-string](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/0678-valid-parenthesis-string/) | Medium |
 ## Math
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -84,4 +87,8 @@ Solutions are automatically synced via [LeetHub](https://github.com/QasimWani/Le
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0268-missing-number](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/0268-missing-number/) | Easy |
+## Stack
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0678-valid-parenthesis-string](https://github.com/Hyeonjoon-Nam/LeetCode-Solutions/tree/main/0678-valid-parenthesis-string/) | Medium |
 <!---LeetCode Topics End-->
